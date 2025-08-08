@@ -9,8 +9,16 @@ const axiosInstance = axios.create({
     "Access-Control-Allow-Origin": "https://srminstitute-ui.vercel.app",
     "Access-Control-Allow-Credentials": "true",
     "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With"
+  },
+  withCredentials: true,
+  timeout: 10000, // Set a timeout for requests (optional)
+  validateStatus: (status) => {
+    // Accept all status codes, you can customize this if needed
+    return status >= 200 && status < 500;
   }
-});
+}); 
+
 
 
 // const redirectToLogin = () => {
