@@ -1,0 +1,35 @@
+.page-size-selector {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .page-size-options {
+    position: absolute;
+    margin-top: 8px;
+    width: 120px;
+    background-color: lightyellow;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .page-size-option {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .page-size-option:hover {
+    background-color: #f0e68c;
+  }
+
+  .button-dived{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .table-option-img{
+    width: 12rem;
+  }
+  

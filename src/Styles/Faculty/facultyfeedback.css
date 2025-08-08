@@ -1,0 +1,67 @@
+.faclity-feed-container {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 80%;
+    margin: auto;
+    background-color: #f9f9f9;
+}
+  
+.faclity-feed-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    align-items: center;
+}
+  
+  .faclity-feed-dropdown,
+  .faclity-feed-details,
+  .faclity-feed-date-picker {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+  }
+  
+  .faclity-feed-add-button,
+  .faclity-feed-submit-button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .faclity-feed-add-button {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .faclity-feed-submit-button {
+    background-color: #007BFF;
+    color: white;
+  }
+  
+  .faclity-feed-add-button:hover {
+    background-color: #45a049;
+  }
+  
+  .faclity-feed-submit-button:hover {
+    background-color: #0056b3;
+  }
+
+  .faculty-top-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+input[type="text-search"] {
+  width: 20rem;
+  height: 2rem;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}

@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+.login-main-div{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat', sans-serif;
+
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-main-div
+.alert-box{
+    position: absolute;
+    top: 2.2rem;
+    left: 50%;
+    transform: translate(0%, -50%);
+    z-index: 99;
+
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #050505;
+    animation: showUp 300ms ease;
+}
+
+.login-main-div
+.alert-box
+.text{
+    color: #b90124;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+@keyframes showUp {
+    from {
+        top: -5rem;
+        opacity: 0;
+    } to {
+        top: 2.2rem;
+        opacity: 1;
+    }
+}
+
+.login-logo-company {
+    height: 16rem;
+    width: 24rem;
+}
+
+.login-main-div
+.background{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: #050505; */
+    /* background-image: url("../../Assets/aicansell-bg.png");  */
+    background-color: #f7f6f6;
+    z-index: 0;
+}
+
+.login-main-div
+.background
+.relative{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+   
+}
+
+.login-main-div
+.background
+.relative
+.cover{
+    /* width: 100%;
+    height: 100%; */
+    opacity: 0.1;
+    z-index: 3;
+}
+
+.login-main-div
+.background
+.relative
+.left-center{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.login-main-div
+.background
+.relative
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 70%;
+}
+
+.login-main-div
+.background
+.relative
+.bottom{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 4;
+    width: 50%;
+}
+
+.login-main-div
+.hero-container,
+.login-main-div
+.form-container{
+    z-index: 3;
+}
+
+.login-main-div .hero-container {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex
+;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    padding-inline: 7rem;
+    /* padding-top: 4rem; */
+}
+.login-main-div
+.hero-container
+.hero-image{
+    width: 80%;
+}
+
+.company-name{
+    color: #000;
+
+    font-size: 2rem;
+    font-weight: 500;
+    font-style: italic;
+
+    margin-bottom: 5rem;
+}
+
+.login-title{
+    color: #000;
+    font-size: 3.75rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+.login-sub-title{
+    color: #000;
+
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.login-linking{
+    color: #000;
+    font-style: none;
+
+    font-weight: 700;
+}
+
+
+.divider{
+width: 6rem;
+height: 3.5px;
+background-color: #000;
+
+border-radius: 1.5rem;
+
+margin-top: 4rem;
+}
+
+.login-sell-line{
+    color: #000;
+
+    font-size: 1.2rem;
+    font-weight: 300;
+
+    margin-top: 3.7rem;
+}
+
+.login-read{
+    margin-top: 2rem;
+}
+
+.login-main-div
+.right-div{
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 7rem;
+    /* padding-bottom: 0rem; */
+    padding-left: 5rem;
+    
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 2px solid green;
+}
+
+.login-main-div
+.form-container{
+    align-items: center;
+    background: linear-gradient(90deg, #516ffe, #fe65c3);
+    border-radius: 3.2rem;
+    box-shadow: 0 4px 8px #0003;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    justify-content: center;
+    max-width: 28rem;
+    overflow: hidden;
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+}
+
+
+.login-main-div
+.right-div
+.form-container
+.heading{
+    /* color: #fff; */
+    color: #fff;
+    margin: 0;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.login-main-div
+.right-div
+.form-container
+.text{
+    color: #fff;
+    margin: 0;
+    font-size: 1.2rem;
+
+    text-align: center;
+}
+
+
+/* For all the headings - Open Sans - semibold 600
+For body - noto sans georgian - extralight 200 or light 300 */
+
+
+.login-main-div
+.form-container
+.input-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.login-main-div
+.form-container
+.input-div
+label{
+    margin: 0;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.login-main-div
+.form-container
+.input-div
+.input-main{
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 0.5rem;
+    height: 2.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.login-main-div
+.form-container
+.input-div
+.input-main
+.icoon{
+    padding-inline: 0.8rem;
+    width: 1.5rem;
+}
+
+.login-main-div
+.form-container
+.input-div
+.input-main
+input{
+    border: none;
+    width: calc(100% - 3.1rem);
+    height: 100%;
+    border-left: 1px solid #fff;
+    background-color: transparent;
+    padding-inline: 0.8rem;
+
+    /* color: #A39E9E; */
+    color: #fff;
+    font-size: 1rem;
+}
+
+.login-main-div
+.form-container
+.input-div
+.input-main
+input:focus{
+    outline: none;
+}
+
+.login-main-div
+.form-container
+.input-div
+.input-main
+.show-pass-icon{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    /* width: 1rem; */
+    transform: translate(-50%, -50%);
+
+    color: #A39E9E;
+    font-size: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-main-div
+.forgot-text{
+    /* color: #A39E9E; */
+    color: #fff;
+    text-align: center;
+    /* pointer-events: none; */
+}
+
+.login-main-div
+.forgot-text
+span{
+    cursor: pointer;
+    color: #b90124;
+    text-decoration: underline;
+}
+
+.login-main-div
+.submit-btn{
+    width: fit-content;
+    height: fit-content;
+    margin-top: 2rem;
+    transform: scale(1.6);
+    margin-bottom: 1rem
+}
+
+.forgot-password-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    /* transform: translate(-50%, -50%); */
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-sizing: border-box;
+    padding-inline: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,240 @@
+.userdata-card-main-div{
+    width: 100%;
+    box-sizing: border-box;
+    height: fit-content;
+    max-height: 36.5rem;
+    overflow: scroll;
+    padding: 1.8rem;
+    border-left: 1px solid #484848;
+    border-bottom: 1px solid #484848;
+    border-right: 1px solid #484848;
+    border-radius: 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.userdata-card-main-div::-webkit-scrollbar{
+    display: none;
+}
+
+.userdata-card-main-div
+.main-title
+.title{
+    margin: 0;
+    color: #000;
+    font-size: 1.7rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 120.3%; /* 2.10525rem */
+}
+
+.userdata-card-main-div
+.total-div{
+    width: 100%;
+}
+
+.userdata-card-main-div
+.total-div
+.text{
+    margin: 0;
+    width: fit-content;
+
+    padding: 0.3rem 1rem;
+    border-radius: 1.9375rem;
+    border: 1px solid #535353;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #000;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 120.3%; /* 1.35338rem */
+
+    span{
+        margin-left: 0.3rem;
+        color: #DA2128;
+        font-weight: 700;
+    }
+}
+
+.userdata-card-main-div
+.progress-text{
+    width: 100%;
+}
+
+.userdata-card-main-div
+.progress-text
+.text{
+    margin: 0;
+    margin-left: 0.5rem;
+    color: #000;
+    text-align: left;
+    -webkit-text-stroke-width: 7;
+    -webkit-text-stroke-color: #212121;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 550;
+    line-height: 120.3%; /* 1.05263rem */
+}
+
+.userdata-card-main-div
+.course-card-div{
+    padding: 0.87rem 0;
+    width: 100%;
+    border-top: 1px dashed #4a4a4a;
+}
+
+.userdata-card-main-div
+.course-card-div
+.title{
+    margin: 0;
+    color: #000;
+    font-size: 1.rem;
+   text-align: left;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.userdata-card-main-div
+.course-card-div
+.type-text{
+    margin: 0;
+    margin: 0.5rem 0;
+    text-align: left;
+    color: #9D9FA2;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.userdata-card-main-div
+.course-card-div
+.progress-and-btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.userdata-card-main-div
+.course-card-div
+.progress-and-btn
+.progress{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.userdata-card-main-div
+.course-card-div
+.progress-and-btn
+.progress
+.progress-num{
+    color: #9D9FA2;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 550;
+    line-height: 120.3%; /* 1.05263rem */
+}
+
+.userdata-card-main-div
+.course-card-div
+.progress-and-btn
+.text-btn{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: #000;
+    text-align: right;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120.3%; /* 1.05263rem */
+}
+
+.userdata-card-main-div
+.course-card-div
+.completed-div{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.3125rem;
+    padding: 0.5rem;
+    border: 1px solid #373737;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.userdata-card-main-div
+.course-card-div
+.completed-div
+.label{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: #000;
+    font-size: 0.4875rem;
+    font-style: normal;
+    font-weight: 550;
+    line-height: 120.3%;
+}
+
+.icon{
+    mix-blend-mode: exclusion;
+}
+
+.userdata-card-main-div
+.course-card-div
+.completed-div
+span{
+    color: #6E6E6E;
+    font-size: 0.825rem;
+    font-style: normal;
+    font-weight: 550;
+    line-height: 82%;
+}
+
+.userdata-card-main-div
+.course-card-div
+.completed-div
+.red-text-btn{
+    border: none;
+    background-color: transparent;
+    color: #DA2128;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 82%;
+}
+
+.userdata-card-main-div
+.course-card-div
+.refresher-date{
+    padding-left: 0.5rem;
+    border-left: 3px solid #DA2128;
+    color: #9D9FA2;
+    font-size: 0.6875rem;
+    font-style: normal;
+    font-weight: 550;
+    line-height: 120.3%; /* 0.82706rem */
+    
+    span{
+        color: #000;
+    }
+}

@@ -1,0 +1,169 @@
+.faculty-main-div-container{
+    width: 97%;
+    padding: 1rem;
+}
+
+.faculty-top-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  
+  textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+  .radio-group {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .radio-group label {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+  }
+  
+  .submit-btn,
+  .clone-btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 48%;
+  }
+  
+
+  
+  .clone-btn {
+    background: #007bff;
+    color: white;
+  }
+  
+
+  
+  .clone-btn:hover {
+    background: #0056b3;
+  }
+
+  .questionpaper-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Modal Overflow Fixes */
+/* Fix for all modal input elements, select elements, and textareas */
+[style*="position: fixed"] input,
+[style*="position: fixed"] select,
+[style*="position: fixed"] textarea {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+}
+
+/* Specific fixes for modal containers */
+[style*="position: fixed"] [style*="width: 100%"] {
+  box-sizing: border-box !important;
+}
+
+/* Fix for inline styled inputs in modals */
+[style*="position: fixed"] input[style*="width: 100%"],
+[style*="position: fixed"] select[style*="width: 100%"],
+[style*="position: fixed"] textarea[style*="width: 100%"] {
+  width: calc(100% - 4px) !important;
+  box-sizing: border-box !important;
+}
+
+/* Fix for inputs with padding and borders */
+[style*="position: fixed"] input[style*="padding: 12px"],
+[style*="position: fixed"] select[style*="padding: 12px"],
+[style*="position: fixed"] textarea[style*="padding: 12px"] {
+  width: calc(100% - 28px) !important;
+  box-sizing: border-box !important;
+}
+
+/* Alternative approach - ensure all modal form elements have proper box-sizing */
+div[style*="position: fixed"] input,
+div[style*="position: fixed"] select,
+div[style*="position: fixed"] textarea {
+  box-sizing: border-box !important;
+}
+
+/* Textarea specific fixes */
+[style*="position: fixed"] textarea {
+  resize: vertical !important;
+  overflow-y: auto !important;
+}
+
+/* Universal modal form element fixes */
+/* Target any element that looks like a modal */
+div[style*="position: fixed"][style*="background"] input,
+div[style*="position: fixed"][style*="background"] select,
+div[style*="position: fixed"][style*="background"] textarea {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+}
+
+/* Fix for modal content containers */
+div[style*="background: #fff"] input,
+div[style*="background: #fff"] select,
+div[style*="background: #fff"] textarea,
+div[style*="background: white"] input,
+div[style*="background: white"] select,
+div[style*="background: white"] textarea {
+  box-sizing: border-box !important;
+}
+
+/* Fix for form elements with specific styling patterns */
+input[style*="border: 2px solid"],
+select[style*="border: 2px solid"],
+textarea[style*="border: 2px solid"] {
+  box-sizing: border-box !important;
+}
+
+/* Ensure proper width calculation for bordered inputs */
+input[style*="width: 100%"][style*="border"],
+select[style*="width: 100%"][style*="border"],
+textarea[style*="width: 100%"][style*="border"] {
+  box-sizing: border-box !important;
+}
+
+/* Additional safety for any form element in a modal-like container */
+[style*="position: fixed"] [style*="padding: 2rem"] input,
+[style*="position: fixed"] [style*="padding: 2rem"] select,
+[style*="position: fixed"] [style*="padding: 2rem"] textarea {
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+/* Responsive modal form elements */
+@media (max-width: 768px) {
+  [style*="position: fixed"] input,
+  [style*="position: fixed"] select,
+  [style*="position: fixed"] textarea {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+}

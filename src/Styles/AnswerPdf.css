@@ -1,0 +1,187 @@
+.proctoring-summary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.answer-pdf-email {
+    background-color: #f6f3f3;
+    padding: 0.7rem;
+    width: 40%;
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ans-pdf-tracking{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.answer-pdf-cards {
+    background-color: #f6f3f3;
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ans-pdf-cards-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.ans-pdf-cards-scors {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.answer-showing-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .answer-pdf-segment {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 3.2rem;
+}
+  
+  .answer-pdf-cards-question {
+    margin-bottom: 1.5rem;
+    text-align: start;
+}
+
+  .answer-pdf-question-card {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    border: 2px solid #000;
+    padding: 15px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 6px 0 #000; /* Default 3D Effect */
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  /* Hover Effect for a More Realistic 3D Look */
+  .answer-pdf-question-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 #000;
+  }
+  
+  /* Correct Answer Selected - Green Bottom 3D Effect */
+  .answer-pdf-question-card.selected-correct {
+    box-shadow: 0 6px 0 #28a745;
+    margin-bottom: 2.5rem;
+}
+  
+  /* Wrong Answer Selected - Red Bottom 3D Effect */
+  .answer-pdf-question-card.selected-wrong {
+    box-shadow: 0 6px 0 #dc3545;
+  }
+  
+  /* Styling Options Inside the Card */
+  .answer-pdf-option {
+    padding: 8px;
+    border-radius: 5px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Green Background for Correct Answers */
+  .answer-pdf-correct {
+    background: #d4edda;
+    color: #155724;
+  }
+  
+  /* Red Background for Wrong Selections */
+  .answer-pdf-incorrect {
+    background: #f8d7da;
+    color: #721c24;
+  }
+  
+  /* Icons */
+  .answer-pdf-icon {
+    font-size: 16px;
+  }
+  
+  .correct-icon {
+    color: green;
+  }
+  
+  .incorrect-icon {
+    color: red;
+  }
+
+  .answer-pdf-status-message {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .answer-pdf-status-message:contains("❌ Not Attempted") {
+    color: #dc3545;
+    background: #ffe6e6;
+  }
+  
+  .answer-pdf-status-message:contains("⏭ Skipped") {
+    color: #ffc107;
+    background: #fff3cd;
+  }
+  
+  .answer-pdf-status-message:contains("🔄 Marked for Review") {
+    color: #17a2b8;
+    background: #d1ecf1;
+  }
+
+  .scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .scroll-to-top-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .answer-pdf-subjective-answer {
+    text-align: left;
+}
+  /* Prevent breaking of questions between pages */
+.answer-pdf-question-card {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* Force new page after segments if needed */
+.answer-pdf-segment {
+  margin-bottom: 20px; /* Add spacing between segments */
+}
+
+/* Ensure no big gaps between questions */
+@media print {
+  .answer-pdf-question-card {
+      margin-bottom: 0;
+  }
+}
+
+  

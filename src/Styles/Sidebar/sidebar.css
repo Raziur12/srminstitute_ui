@@ -1,0 +1,24 @@
+.side-bar-main-log-out-btn{
+    margin-top: 4rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+
+    background-color: #353535;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: none;
+
+    color: #fff;
+
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    font-size: 1.2rem;
+}
+
+.side-bar-main-log-out-btn:hover{
+    background-color: #da2129;
+}

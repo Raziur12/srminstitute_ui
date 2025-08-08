@@ -1,0 +1,516 @@
+.org-main{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.org-main-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Organization.css */
+
+/* Main container styling */
+.text-ontop {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading styles */
+.org-heading, .step1-heading, .step2-heading {
+  color: #333;
+  font-size: 1.75rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Span styles for emphasis */
+.congrats-text {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.next-step-text, .sub-org-question, .role-question {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Paragraph styles */
+.sub-org-info, .sub-org-performance, .next-step-create-role, 
+.role-info, .employee-access-info, .next-step-create-series {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Span styles for sub-organisation examples */
+.sales, .marketing, .finance, .admins, .sub-admins, .series, .season {
+  color: #17a2b8;
+  font-weight: bold;
+}
+
+/* Additional paragraph-specific styling */
+.sub-org-performance {
+  color: #555;
+  margin-left: 20px;
+}
+
+.next-step-create-role, .next-step-create-series {
+  font-style: italic;
+}
+
+/* Styling for admins and sub-admins */
+.admins, .sub-admins {
+  color: #dc3545;
+}
+
+/* Hover effect for spans */
+span:hover {
+  text-decoration: underline;
+}
+
+  
+  .org-main-btn button {
+    padding: 1rem 1rem;
+    background: linear-gradient(90deg, #fe65c3, #516ffe);
+    color: #000;
+    border: none;
+    font-weight: 600;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .org-main-btn button.active {
+    background-color: #3b82f6; /* Blue background */
+    color: #fff;
+  }
+  
+  .org-main-btn button:hover {
+    background-color: #94a3b8; /* Slightly darker gray on hover */
+    color: #000;  
+}
+
+
+/* OrgMain css here */
+/* OrgMain.css */
+
+.org-main {
+    padding: 20px;
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  .org-cards-container {
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); 2 cards per row */
+    gap: 20px; /* Space between the cards */
+    width: 93%;
+  }
+
+  .org-to-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 9rem;
+}
+  
+  .org-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(90deg,#fe65c3, #516ffe);
+    display: flex;
+    align-items: center;
+    /* flex-direction: column; */
+    gap: 2rem;
+  }
+
+  .show-logo {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5rem;
+}
+
+.org-name {
+  width: 10rem;
+}
+  
+  .org-card h2 {
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .logo-choose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+  
+  .input-field {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    height: 1.2rem;
+    width: 13rem;
+  }
+  
+  .org-logo img {
+    width: 10rem;
+    height: 10rem;
+    margin-top: 10px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  .org-info {
+    margin-top: 10px;
+    width: 20rem;
+    font-weight: 700;
+    color: #fff;
+}
+  
+  .org-info p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+.title-name {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+  
+  .save-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save-button:hover {
+    background-color: #45a049;
+  }
+  
+
+  /* SubOrg CSS HERE */
+  /* Container for sub-organizations */
+.sub-org-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Add Sub Organization button */
+  .add-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .add-btn:hover {
+    background-color: #0b7dda;
+  }
+  
+  /* Popup overlay */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  /* Popup content */
+  .popup-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  /* Card fields */
+  .card-field {
+    margin-bottom: 12px;
+  }
+  
+  .card-field label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .card-field input, .card-field select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  /* Popup buttons */
+  .popup-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .submit-btn, .close-btn {
+    /* background-color: #4CAF50; */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+
+  
+  .close-btn {
+    background-color: #f44336;
+  }
+  
+  .close-btn:hover {
+    background-color: #c62828;
+  }
+  
+  /* Container for existing sub-organizations cards */
+  .cards-container {
+
+    margin-top: 6rem;
+  }
+  
+  /* Card for existing sub-organizations */
+  .card {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Save button */
+  .save-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .save-btn:hover {
+    background-color: #45a049;
+  }
+  
+  
+  /* HERE START ROLE CSS */
+
+  .roles-container {
+    padding: 20px;
+    width: 20rem;
+    margin: 0 auto;
+    position: relative; /* Ensure the container is positioned relative to allow absolute positioning inside */
+}
+
+.roles-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    position: relative; /* Position relative to place the add button absolutely inside the container */
+}
+
+.roles-card h2 {
+    margin-top: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-button {
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute; /* Absolute positioning to place it outside the card */
+    top: 20px; /* Adjust top position */
+    right: -110px; /* Adjust right position to align it outside the card */
+}
+
+.add-button:hover {
+    background-color: #218838;
+}
+
+.dropdowns {
+    margin-bottom: 20px;
+}
+
+.dropdown {
+    margin-bottom: 10px;
+}
+
+.dropdown label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dropdown select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.save-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #0056b3;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+.modal-input {
+    margin-bottom: 15px;
+}
+
+.modal-input label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-input input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-save-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-save-button:hover {
+    background-color: #0056b3;
+}
+
+.modal-close-button {
+    padding: 8px 16px;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-close-button:hover {
+    background-color: #5a6268;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close-icon:hover {
+  color: red; /* Optional hover effect */
+}
+

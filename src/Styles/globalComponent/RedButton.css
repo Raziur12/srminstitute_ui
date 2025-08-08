@@ -1,0 +1,21 @@
+.red-btn-global {
+    border: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 1.6rem;
+    /* background: #DA2128; */
+    background: #FA9919;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 1.7rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.red-btn-global:hover{
+    background: #1F48D6;
+}

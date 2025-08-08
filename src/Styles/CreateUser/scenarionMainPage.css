@@ -1,0 +1,49 @@
+.scenario-Main-page-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1.5rem;
+
+    margin-top: 2rem;
+}
+
+.scenario-main-page-top-headers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-width: 95%;
+}
+
+.scenario-main-table-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 99%;
+}
+
+.scenario-main-page-top-headers h3 {
+    font-size: 1.8rem;
+    letter-spacing: .2px;
+}
+
+.scenario-create-btn{
+  padding: 0.5rem;
+    font-size: 1.124rem;
+    border-radius: 2.4375rem;
+    border: none;
+    color: #fff;
+    background: #1F48D6;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.scenario-create-btn:hover{
+background-color: #FA9919;
+}

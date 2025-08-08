@@ -1,0 +1,71 @@
+/* EmailVerify.css */
+.verify-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .verify-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .verify-input-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .verify-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .verify-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .verify-input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .verify-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .verify-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .verify-error {
+    color: #dc3545;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  .verify-message {
+    color: #28a745;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }

@@ -1,0 +1,129 @@
+.navbar-main-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* background-color: #000000; */
+
+background-color: #fff;
+
+    height: 6rem;
+    box-sizing: border-box;
+    padding-inline: 2rem;
+    position: fixed;
+    z-index: 12;
+}
+
+.navbar-main-div
+.logo-section{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 22%;
+    padding: 1px; 
+}
+
+.navbar-main-div
+.search-dropdown{
+    position: absolute;
+    top: 100%;
+    transform: translate(-50%, 0);
+    left: 50%;
+    background-color: #000;
+    width: 50%;
+    max-width: 40rem;
+    min-width: 20rem;
+    border-radius: 0 0 1rem 1rem;
+    border: 1px solid #454545;
+    border-top: none;
+}
+
+.navbar-main-div
+.search-dropdown
+.search-row{
+    width: 100%;
+    height: 2.5rem;
+    box-sizing: border-box;
+    padding-inline: 1rem;
+    border-bottom: 1px dashed #454545;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.navbar-main-div
+.search-dropdown
+.search-row
+.text{
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.navbar-main-div
+.search-dropdown
+.search-row
+span{
+    color: #999999;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.navbar-main-div
+.search-dropdown
+.search-row
+.view-btn{
+    color: #da2129;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    text-transform: capitalize;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+.search-container{
+    position: relative;
+    width: 614.444px;
+}
+
+/* @media (minWidth: 1341px)": {
+    width: "834px"} */
+
+.search-container
+.navbar-search{
+    border: 1px solid #212121;
+    border-radius: 8.889px;
+    background: rgba(235, 233, 233, 0.85);
+    box-shadow: 0px 1.111px 8.889px 0px rgba(0, 0, 0, 0.11);
+    width: 80%;
+    padding: 14.444px 30px 15.556px 19.444px; 
+    color: white;
+    font-size: 1.2rem;
+}
+
+.search-container
+.navbar-search:focus{
+    outline: none;
+}
+
+.search-container
+.search-icon{
+    color: #da2129;
+    position: absolute;
+    top: 50%;
+    right: 2.5rem;
+    transform: translateY(-50%);
+}

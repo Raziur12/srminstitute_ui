@@ -1,0 +1,149 @@
+.library-container {
+    padding: 20px;
+  }
+
+  .libry-sub-tit {
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: start;
+}
+  
+  .search-bar input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  button {
+    padding: 8px 12px;
+    color: #000;
+    /* background: linear-gradient(90deg, rgba(255, 221, 88, 1) 0%, rgba(255, 144, 76, 1) 100%); */
+    background: #f3c806;
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 36rem;
+    text-align: center;
+}
+  
+  .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .modal-actions button {
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .library-model{
+    font-size: .8rem;
+  }
+
+  .library-model-drop {
+    display: flex;
+    margin-top: 2rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+select#season {
+    padding: 0.4rem;
+    font-weight: 700;
+}
+
+.search-bar-contain {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+input.search-libary {
+  width: 40%;
+}
+
+select.select-model {
+  width: 137%;
+  padding: 0.8rem;
+}
+
+.loading-spinner {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-top: 4rem;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 20px;
+}
+
+.prev-button,
+.next-button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.prev-button.disabled,
+.next-button.disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.page-info {
+  font-size: 16px;
+  font-weight: bold;
+}

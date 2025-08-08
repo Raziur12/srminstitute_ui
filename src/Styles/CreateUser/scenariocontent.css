@@ -1,0 +1,134 @@
+/* General Form Styling */
+.scenariocontaent-main-form {
+    max-width: 100%;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background: #f4f7f6;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .assessment-add-tittle{
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+
+  .assessment-main-form-container{
+    width: 100%;
+    /* height: 14rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+
+  .assessment-title-click {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 1rem;
+    padding: .5rem;
+}
+
+
+  .scenariocontaent-main-form button {
+    background: #0084e7;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .scenariocontaent-main-form button:hover {
+    background: #0056b3;
+  }
+  
+  .scenariocontaent-one-input {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .scenariocontaent-one-input input[type="text"],
+  .scenariocontaent-one-input input[type="number"],
+  .scenariocontaent-one-input select,
+  .scenariocontaent-one-input textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccd0d5;
+    border-radius: 4px;
+    box-sizing: border-box; /* Makes sure the padding doesn't affect the final size */
+  }
+  
+  .scenariocontaent-one-input input[type="file"] {
+    border: none;
+    margin-top: 5px;
+  }
+  
+  .scenariocontaent-two-divs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .scenariocontaent-two-divs > label {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .scenariocontaent-one-input textarea {
+    max-width: 34rem;
+    max-height: 30rem;
+
+    height: 5rem;
+
+    padding: .5rem;
+  }
+
+  .scenariocontaent-one-input input {
+    width: 32rem;
+    height: 2.8rem;
+
+    padding: .5rem;
+  }
+
+  .isLivescenario{
+    width: 1rem;
+    max-height: 1.5rem;
+  }
+  
+  .scenariocontaent-two-divs > label:last-child {
+    margin-right: 0;
+  }
+  
+  /* Improve the visual grouping */
+  .scenariocontaent-two-divs:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+  
+  /* Adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .scenariocontaent-two-divs > label {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+  
+  /* Checkbox and File inputs styling enhancement */
+  .scenariocontaent-one-input input[type="checkbox"] {
+    margin-top: 5px;
+  }
+  
+  .scenariocontaent-one-input input[type="file"] {
+    border: 1px solid #ccd0d5;
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  

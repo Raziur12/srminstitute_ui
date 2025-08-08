@@ -1,0 +1,54 @@
+.feedback-preview-container {
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .feedback-preview-title {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .feedback-preview-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .feedback-preview-table th,
+  .feedback-preview-table td {
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    vertical-align: top;
+    text-align: left;
+  }
+  
+  .feedback-preview-table th {
+    background-color: #f4f6f8;
+    color: #2c3e50;
+    font-weight: 600;
+  }
+  
+  .feedback-preview-table tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  .section-header {
+    background-color: #eaecef !important;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #1c1c1c;
+  }
+  
+  .feedback-preview-comment-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 0;
+  }
+  

@@ -1,0 +1,448 @@
+/* .sentiCloud-main-div {
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    overflow: hidden;
+} */
+
+.custom-swal-popup {
+    width: 920px; /* Adjust the width as needed */
+}
+
+
+.sentiCloud-main-div {
+    width: 100%;
+    /* max-width: 100vw; */
+    /* height: 87.2vh; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    /* padding-bottom: 1rem; */
+    /* overflow: hidden; */
+}
+
+
+.sentiCloud_title {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+}
+
+.senti-cloud-sidemenu-main-des{
+    margin: 0 auto;
+
+    font-size: 1.7rem;
+    font-weight: 600;
+
+    color: #fff;
+    padding: .4rem;
+}
+
+.senti-cloud-sidemenu-main-des-week{
+    margin: 0 auto;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #000;
+    padding: .4rem;
+}
+
+/* .senti-cloud-title-discrption{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: .3rem;
+} */
+
+/* .senti-words-sidemenu-description{
+width: 70rem;
+font-size: 1.2rem;
+font-weight: 500;
+letter-spacing: .5px;
+line-height: 60px;
+padding: .4rem;
+color: #fff;
+margin: 0;
+} */
+
+/* .senti-words-sidemenu-description-week{
+    width: 70rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: .5px;
+    line-height: 60px;
+    padding: .4rem;
+    color: #000;
+    margin: 0;
+} */
+
+
+.sentiCloud_title_welcomer{
+    margin-top: 1rem;
+    color: #000;
+}
+
+.senti-cloud-score-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .3rem;
+    width: 100%;
+    max-width: 72rem;
+    gap: 3rem;
+
+    margin-bottom: 1rem;
+}
+
+.senti-clod-score-img{
+    width: 8rem;
+    height: 8rem;
+}
+
+.senti-score-number{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.senti-cloud-score-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.senti-clod-help-img {
+    width: 6rem;
+    height: 6rem;
+}
+
+.senti-cloud-help-logo-title {
+    margin: 0 auto;
+    text-align: center;
+    width: 10rem;
+}
+
+.senti-cloud-help-logo-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-custom-course-sidemenu-week{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    /* border: 2px solid #6b6a6a; */
+    box-shadow: 9px 9px 17px -2px rgba(122, 122, 122, 1);
+    background: linear-gradient(90deg, rgba(255,221,88,1) 0%, rgba(255,144,76,1) 100%);
+    border-radius: 1rem;
+    width: -moz-fit-content;
+    width: 90vw;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+.senti-cloud-box-img{
+    width: 7rem;
+    height: 7rem;
+}
+
+
+/* SentiBarChart Css Start Here also */
+.setniBar-main-container{
+    width: 100%;
+    /* max-width: 100vw; */
+    /* height: 87.2vh; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    /* padding-bottom: 1rem; */
+    margin-top: 2rem;
+
+    gap: 2.5rem;
+}
+
+.senti-cloud-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .senti-cloud-table th{
+   font-size: 1.2rem;
+   font-weight: 600;
+   /* color: #fff; */
+   text-align: center;
+
+   border: 1px solid #ddd;
+  }
+
+  .senti-cloud-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  /* .senti-cloud-table th {
+    background-color: #f2f2f2;
+  } */
+  
+  .graph-container-table {
+    box-shadow: 2px -4px 10px 2px rgba(194, 190, 194, 1);
+    background-color: #fff;
+    /* width: 80rem; */
+    width: 87%;
+    height: -moz-fit-content;
+    height: fit-content;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    background: linear-gradient(90deg, rgba(81, 111, 254, 1) 0%, rgba(254, 101, 195, 1) 100%);
+}
+
+
+
+/* .sentiCloud_linecolor{
+    color: #FDA100;
+} */
+
+/* .sentiCloud_linecolor_head{
+    color: #000;
+} */
+
+/* .senticloud_received_mesg{
+    color: #000;
+} */
+
+/* .sentiCloud_header{ */
+    /* color: #FDA100; */
+    /* margin-top: 2rem; */
+    /* display: flex;
+    justify-content: center; */
+/* } */
+
+/* .senti-barchart {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+/* .sean-both-main-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10rem;
+} */
+
+.sean_analysis_head_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
+    margin-bottom: 2rem;
+}
+
+.sean_main_img {
+    width: 6rem;
+    height: 6rem;
+}
+
+.sean_analysis_boxtitle {
+    color: #000;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.sean-analysis-recmd-line {
+    border-left: 1px solid black;
+    height: 100%; 
+  }
+  
+
+.sean_boxes{
+    /* width: 100vw;
+    padding: 10px; */
+    /* padding-inline: 1rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sean_analysis{
+    width: 100%;
+}
+
+.sean_analysis_boxheader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sean_toggle-btn{
+    background-color: transparent;
+    border: none;
+    color: #FDA100;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.sean_analysis_boxes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+.icon-headers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.sean_analysis_words_img {
+    width: 5rem;
+    height: 10rem;
+}
+
+.sean-backend-words-right{
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.sean_analysis_inside_power {
+    max-width: 20rem;
+    height: fit-content;
+    border: 9px solid #77dd77;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.sean_recommends_inside_week {
+    max-width: 20rem;
+    border: 9px solid #ff6961;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.sean-backend-words-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sean_backend_words {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+
+.sean_recommends_boxtitle{
+    color: #fff;
+    font-size: 14px;
+}
+
+.sean_recommends_inside{
+    background-color: #F7B85E;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    gap: .2rem;
+}
+
+    .senti_btn_box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7rem;
+        margin: 2.5rem;
+    }
+
+
+.senti_btn {
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 3.4375rem;
+    /* background: #FA9919; */
+    background: linear-gradient(90deg, rgba(81, 111, 254, 1) 0%, rgba(254, 101, 195, 1) 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* .senti_btn-right{
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 3.4375rem;
+    background: #FA9919;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+} */
+
+.senti_btn:hover{
+    background: #1F48D6;
+}
+
+@media (max-width: 768px) {
+    .graph-container-table {
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .senti-cloud-score-section{
+        flex-wrap: wrap;
+    }
+    .senti_btn_box{
+        flex-wrap: wrap;
+        gap: 1.2rem;
+    }
+
+    .senti-cloud-table th{
+        font-size: 1rem;
+    }
+
+    .senti-cloud-table td{
+        font-size: .8rem;
+    }
+}

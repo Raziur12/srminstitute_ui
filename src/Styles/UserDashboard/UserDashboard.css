@@ -1,0 +1,570 @@
+/* .main-dasboard-container
+p {
+margin: 0;
+} */
+
+.main-dasboard-container{
+    background-color: #FCF8F2;
+
+    width: 100%;
+}
+
+.table-set {
+    padding: 4rem;
+    margin-left: 6rem;
+}
+
+img.senti-cloud-box-img {
+    width: 7rem;
+}
+
+.cumulative-main-title {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-left: 6.9rem;
+
+    margin: 0;
+}
+
+.dashboard-card-titles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+}
+
+.dashboard-levels{
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.dashboard-card-cumulative-score{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem
+}
+
+.dashboard-cumulative-title{
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 0 auto;
+}
+
+.dashboard-cumulative-number{
+    font-size: 1.8rem;
+        font-weight: 500;
+        margin: 0 auto;
+        color: red;
+}
+
+.all-cards-show{
+    color: #3D4EE4;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.dashboard-cards-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    width: 100%;
+    height: 18rem;
+
+    padding-inline: .5rem;
+    box-sizing: border-box;
+}
+
+.card-img-title-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+background-color: #3D4EE4;
+
+height: fit-content;
+width: 100%;
+padding: 1rem auto;
+
+}
+
+.course-card-div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    height: 100%;
+    background-color: #fff;
+
+    box-shadow: 2px -4px 10px 2px rgba(194,190,194,1);
+    border-radius: 2rem;
+
+    width: calc(25% - 0.75rem);
+    overflow: hidden;
+}
+
+.dasboard-card-level-logo {
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.dashboard-competency-main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-top: 5rem;
+}
+
+.dashboard-competency-container {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
+    padding: 1rem;
+}
+
+.dashboard-competency-assigned-names {
+    margin: 0 auto;
+    font-size: 1.3rem;
+    font-weight: 200;
+    width: 10rem;
+    text-align: center;
+}
+
+.dashboard-competency-assigned{
+    margin: 0 auto;
+    font-size: 4.5rem;
+    font-weight: 600;
+}
+
+.dashboard-comeptency-img-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.senti-cloud-attempted-img {
+    width: 5.5rem;
+    height: 5.5rem;
+}
+
+
+
+.card-titles-head{
+    color: aliceblue;
+    padding: .5rem;
+
+    font-weight: 600;
+}
+
+.card-category{
+    font-weight: 300;
+    font-size: .8rem;
+}
+
+.dashboard-course-card-img{
+    width: 3rem;
+    padding: .5rem;
+}
+
+.card-category{
+    margin-top: .5rem !important;
+}
+
+.card-user-map-pfp {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 0.5rem;
+}
+
+.card-user-pfp{
+    width: 4rem;
+}
+
+.card-user-name{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.card-user-title{
+    font-size: .8rem;
+    font-weight: 400;
+
+  margin-top: .3rem !important;
+    color: #A7A7A7;
+}
+
+.dashboard-student-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+width: 100%;
+
+    gap: 2.2rem;
+    padding: 0.5rem;
+    margin-top: 1.7rem;
+}
+
+.student-cound-card{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+
+    gap: .5rem;
+}
+
+.session-cound-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: .5rem;
+}
+
+.session-icon-dashboard,
+.student-icon-dashboard{
+width: 1.2rem;
+}
+
+.session-number-dashboard,
+.student-number-dashboard{
+
+    font-size: .8rem;
+}
+
+.dashboard-progress-bar-container{
+    width: 100%;
+
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+
+
+
+.home-custom-course-sidemenu-dashboard{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    /* border: 2px solid #6b6a6a; */
+    box-shadow: 9px 9px 17px -2px rgba(122, 122, 122, 1);
+    background: linear-gradient(90deg, rgba(81, 111, 254, 1) 0%, rgba(254, 101, 195, 1) 100%);
+    border-radius: 1rem;
+    width: -moz-fit-content;
+    width: 64vw;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+.home-custom-course-sidemenu-week-dashboard{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    /* border: 2px solid #6b6a6a; */
+    box-shadow: 9px 9px 17px -2px rgba(122, 122, 122, 1);
+    background: linear-gradient(90deg, rgba(255, 221, 88, 1) 0%, rgba(255, 144, 76, 1) 100%);
+    border-radius: 1rem;
+    width: -moz-fit-content;
+    width: 64vw;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+.home-custom-level-side-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+
+/* Graph Css Code Start here */
+
+.main-graph-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    width: 100%;
+    margin-top: 2rem;
+
+    gap: 1.9rem;
+
+    padding-inline: .5rem;
+    box-sizing: border-box;
+}
+
+.graph-container {
+    box-shadow: 2px -4px 10px 2px rgba(194, 190, 194, 1);
+    background-color: #fff;
+    /* background: linear-gradient(90deg, rgba(255, 221, 88, 1) 0%, rgba(255, 144, 76, 1) 100%); */
+    /* width: 80rem; */
+    width: 87%;
+    height: fit-content;
+    border-radius: 1rem;
+    box-sizing: border-box;
+
+    padding: 1rem;
+}
+
+.graph-title{
+    font-size: 1.4rem;
+font-weight: 600;
+
+padding: 1rem;
+}
+
+.dashboard-leader-score-main{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    gap: 4rem;
+}
+
+.dashboard-leader-table{
+    border-radius: 1rem;
+    box-sizing: border-box;
+}
+
+.leader-board-title,
+.dash-hours-title{
+    font-size: 1.8rem;
+    font-weight: 600;
+
+    padding: .5rem;
+
+}
+
+.dash-leader-table{
+    display: flex;
+  flex-direction: column;
+
+  height: 15rem;
+
+  background-color: #fff;
+  margin-left: .5rem;
+
+  border-radius: 1rem;
+  box-shadow: 2px -4px 10px 2px rgba(194,190,194,1);
+
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar for Webkit-based browsers */
+.dash-leader-table::-webkit-scrollbar {
+    width: 10px; 
+}
+
+.dash-leader-table::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.dash-leader-table::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 12px; 
+}
+
+.dash-leader-table::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/* Custom scrollbar for Firefox */
+.dash-leader-table {
+    scrollbar-width: thin; 
+    scrollbar-color: #888 transparent; 
+}
+
+
+
+.dash-table-head{
+    font-size: 0.8rem;
+    color: #84868A;
+
+    text-align: center;
+
+    padding: 0.5rem 1rem;
+}
+
+.dash-r-leader{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.dash-table-row{
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+
+    color: #84868A;
+
+}
+
+.name-pfp-leaderboard{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    gap: 0.3rem;
+
+    width: 6.8rem;
+    height: 3rem;
+}
+
+img.dash-pfp-img {
+    width: 2rem;
+    height: 1.7rem;
+}
+
+.dash-name{
+    font-size: 0.8rem;
+font-weight: 700;
+color: #000;
+}
+
+.dash-point{
+    font-weight: 600;
+    color: #3BAFA8;
+}
+
+.dash-hours-graph-main{
+    box-shadow: 2px -4px 10px 2px rgba(194,190,194,1);
+    background-color: #fff;
+
+    border-radius: 1rem;
+
+}
+
+.senti-cloud-title-discrption {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: .3rem;
+
+    width: 90%;
+}
+
+.senti-words-sidemenu-description{
+    /* width: 70rem; */
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: .5px;
+    line-height: 60px;
+    padding: .4rem;
+    color: #fff;
+    margin: 0;
+    }
+
+    .senti-words-sidemenu-description-week{
+        /* width: 70rem; */
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: .5px;
+        line-height: 60px;
+        padding: .4rem;
+        color: #000;
+        margin: 0;
+    }
+
+    .setniBar-dropdown-custom {
+        width: 20rem;
+        height: 2.5rem;
+        border-radius: 1rem;
+        background-color: #fcf7c6;
+        font-weight: 600;
+        text-align: center;
+        font-size: 1rem;
+        color: #000;
+    }
+
+    .setniBar-title-dropdown-title{
+        font-size: 1.3rem;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .setniBar-title-dropdown-content{
+    font-size: 1.2rem;
+    font-weight: 500;
+    }
+
+    .dashboard-level-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        background: linear-gradient(90deg, rgba(255, 221, 88, 1) 0%, rgba(255, 144, 76, 1) 100%);
+        border-radius: 2rem;
+        border: none;
+
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .dashboard-level-btn{
+        width: 5rem;
+    }
+
+    .dashboard-level-content{
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-left: 15rem;
+    }
+
+@media (max-width: 768px) {
+    .main-dasboard-container{
+padding: .7rem;
+    }
+
+    .cumulative-main-title{
+font-size: 1.2rem;
+    }
+    .dashboard-card-titles{
+        flex-wrap: wrap;
+    }
+    .cumulative-main-title {
+        font-size: 1.8rem;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dashboard-competency-main{
+        flex-wrap: wrap;
+    }
+
+    .home-custom-course-sidemenu-dashboard,
+    .home-custom-course-sidemenu-week-dashboard{
+        flex-direction: column;
+    }
+
+    .senti-words-sidemenu-description,
+    .senti-words-sidemenu-description-week{
+        width: 100%;
+        line-height: 30px;
+    }
+
+    .graph-container{
+        width: 100%;
+        height: 100%;
+    }
+    .dashboard-level-content{
+        width: 100%;
+        padding: 0;
+    }
+}

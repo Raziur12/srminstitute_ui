@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+.login-main-signup-div{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat', sans-serif;
+
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-main-signup-div
+.alert-box{
+    position: absolute;
+    top: 2.2rem;
+    left: 50%;
+    transform: translate(0%, -50%);
+    z-index: 99;
+
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #050505;
+    animation: showUp 300ms ease;
+}
+
+.login-main-signup-div
+.alert-box
+.text{
+    color: #b90124;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+@keyframes showUp {
+    from {
+        top: -5rem;
+        opacity: 0;
+    } to {
+        top: 2.2rem;
+        opacity: 1;
+    }
+}
+
+.login-main-signup-div
+.background{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: #050505; */
+    background-color: #f7f6f6;
+    /* background-image: url("../../Assets/aicansell-bg.png");  */
+    z-index: 0;
+}
+
+.login-main-signup-div
+.background
+.relative{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+   
+}
+
+.login-main-signup-div
+.background
+.relative
+.cover{
+    /* width: 100%;
+    height: 100%; */
+    opacity: 0.1;
+    z-index: 3;
+}
+
+.login-main-signup-div
+.background
+.relative
+.left-center{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.login-main-signup-div
+.background
+.relative
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 70%;
+}
+
+.login-main-signup-div
+.background
+.relative
+.bottom{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 4;
+    width: 50%;
+}
+
+.login-main-signup-div
+.hero-container,
+.login-main-signup-div
+.form-container{
+    z-index: 3;
+}
+
+.login-main-signup-div
+.hero-container{
+    width: 52%;
+    height: 60%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-inline: 7rem;
+    padding-top: 4rem;
+}
+
+h3.signup-subhead {
+    margin-bottom: 3rem;
+    margin-top: 0.5rem;
+    font-weight: 800;
+    /* font-size: 1rem; */
+}
+
+.login-main-signup-div
+.hero-container
+.hero-image{
+    width: 80%;
+}
+
+.company-name{
+    color: #000;
+
+    font-size: 2rem;
+    font-weight: 500;
+    font-style: italic;
+
+    margin-bottom: 5rem;
+}
+
+.main-fs-ls{
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem
+}
+
+.login-title{
+    color: #000;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.login-sub-title{
+    color: #000;
+
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.login-linking{
+    color: #000;
+    font-style: none;
+    text-decoration: none; 
+    font-weight: 700;
+}
+
+
+.divider{
+width: 6rem;
+height: 3.5px;
+background-color: #000;
+
+border-radius: 1.5rem;
+
+margin-top: 4rem;
+}
+
+.login-sell-line{
+    color: #000;
+
+    font-size: 1.2rem;
+    font-weight: 300;
+
+    margin-top: 3.7rem;
+}
+
+.login-read{
+    margin-top: 2rem;
+}
+
+.login-main-signup-div
+.right-signup-div{
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: .7rem;
+    /* padding-bottom: 0rem; */
+    padding-left: 5rem;
+    
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 2px solid green;
+}
+
+.login-main-signup-div
+.form-container{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+       max-width: 28rem;
+       height: fit-content;
+       box-sizing: border-box;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       gap: .5rem;
+   
+       border-radius: 3.2rem;
+       padding: 2rem;
+
+       background: linear-gradient(90deg, #516ffe, #fe65c3);
+   
+       /* -webkit-box-shadow: inset 0px 0px 300px 200px rgba(255,255,255,0.3);
+   -moz-box-shadow: inset 0px 0px 300px 200px rgba(255,255,255,0.3); */
+   /* box-shadow: inset 0px 0px 300px 200px rgba(255,255,255,0.3); */
+}
+
+
+.login-main-signup-div
+.right-signup-div
+.form-container
+.heading{
+    /* color: #fff; */
+    color: #fff;
+    margin: 0;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.login-main-signup-div
+.right-signup-div
+.form-container
+.text{
+    color: #000;
+    margin: 0;
+    font-size: 1.2rem;
+
+    text-align: center;
+}
+
+
+/* For all the headings - Open Sans - semibold 600
+For body - noto sans georgian - extralight 200 or light 300 */
+
+
+.login-main-signup-div
+.form-container
+.input-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.login-main-signup-div
+.form-container
+.input-div
+label{
+    margin: 0;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.login-main-signup-div
+.form-container
+.input-div
+.input-main{
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 0.5rem;
+    height: 2.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.login-main-signup-div
+.form-container
+.input-div
+.input-main
+.icoon{
+    padding-inline: 0.8rem;
+    width: 1.5rem;
+}
+
+.login-main-signup-div
+.form-container
+.input-div
+.input-main
+input{
+    border: none;
+    width: calc(100% - 3.1rem);
+    height: 100%;
+    border-left: 1px solid #A39E9E;
+    background-color: transparent;
+    padding-inline: 0.8rem;
+
+    /* color: #A39E9E; */
+    color: #fff;
+    font-size: 1rem;
+}
+
+.login-main-signup-div
+.form-container
+.input-div
+.input-main
+input:focus{
+    outline: none;
+}
+
+.login-main-signup-div
+.form-container
+.input-div
+.input-main
+.show-pass-icon{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    /* width: 1rem; */
+    transform: translate(-50%, -50%);
+
+    color: #A39E9E;
+    font-size: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-main-signup-div
+.forgot-text{
+    /* color: #A39E9E; */
+    color: #000;
+    text-align: center;
+    pointer-events: none;
+}
+
+.login-main-signup-div
+.forgot-text
+span{
+    cursor: pointer;
+    color: #b90124;
+    text-decoration: underline;
+}
+
+.login-main-signup-div
+.submit-btn{
+    width: fit-content;
+    height: fit-content;
+    margin-top: 2rem;
+    transform: scale(1.6);
+    margin-bottom: 1rem
+}
+
+.forgot-password-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    /* transform: translate(-50%, -50%); */
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-sizing: border-box;
+    padding-inline: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Small devices (phones, less than 576px) */
+@media (max-width: 576px) {
+    .login-main-signup-div {
+        flex-direction: column; /* Stack items vertically */
+        padding: 1rem; /* Add padding for smaller screens */
+    }
+
+    .login-main-signup-div .hero-container {
+        width: 100%; /* Full width */
+        padding-inline: 2rem; /* Reduce padding */
+        height: 25%;
+        padding-top: 0;
+    }
+
+    .login-main-signup-div .right-signup-div {
+        width: 100%; /* Full width */
+        padding-left: 0; /* Remove left padding */
+    }
+
+    .login-main-signup-div .form-container {
+        max-width: 100%; /* Allow full width */
+        padding: 1.5rem; /* Adjust padding */
+    }
+
+    .login-main-signup-div .login-title {
+        font-size: 2.5rem; /* Reduce font size */
+    }
+
+    /* .login-main-signup-div .login-sub-title {
+        font-size: 1.2rem; 
+    } */
+
+    .login-main-signup-div .company-name {
+        font-size: 1.5rem; /* Reduce font size */
+    }
+
+    .login-main-signup-div .divider {
+        width: 4rem; /* Reduce divider width */
+    }
+}
+
+/* Medium devices (tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .login-main-signup-div {
+        flex-direction: row; /* Maintain row layout */
+        padding: 1.5rem; /* Add some padding */
+    }
+
+    .login-main-signup-div .hero-container {
+        width: 60%; /* Adjust width */
+        padding-inline: 4rem; /* Moderate padding */
+    }
+
+    .login-main-signup-div .right-signup-div {
+        width: 40%; /* Adjust width */
+        padding-left: 2rem; /* Moderate padding */
+    }
+
+    .login-main-signup-div .form-container {
+        max-width: 100%; /* Allow full width */
+        padding: 1.5rem; /* Adjust padding */
+    }
+
+    .login-main-signup-div .login-title {
+        font-size: 3rem; /* Moderate font size */
+    }
+
+    .login-main-signup-div .login-sub-title {
+        font-size: 1.4rem; /* Moderate font size */
+    }
+
+    .login-main-signup-div .company-name {
+        font-size: 1.8rem; /* Moderate font size */
+    }
+
+    .login-main-signup-div .divider {
+        width: 5rem; /* Adjust divider width */
+    }
+}

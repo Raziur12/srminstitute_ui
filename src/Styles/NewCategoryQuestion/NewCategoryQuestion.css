@@ -1,0 +1,62 @@
+.category-form-wrapper {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.category-form-wrapper h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #222;
+}
+
+.category-form-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.category-form-wrapper label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.category-form-wrapper input,
+.category-form-wrapper select {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-top: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.category-form-wrapper input:focus,
+.category-form-wrapper select:focus {
+  border-color: #3b82f6;
+}
+
+.category-form-wrapper button[type="submit"] {
+  background-color: #facc15; /* Yellow */
+  color: #000;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-form-wrapper button[type="submit"]:hover {
+  background-color: #fbbf24;
+}

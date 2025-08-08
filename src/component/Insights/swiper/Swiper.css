@@ -1,0 +1,90 @@
+
+.swiperContainer::-webkit-scrollbar-thumb {
+    background-color: #dac017ae; /* Color of the thumb */
+    border-radius: 3px;
+  }
+  
+  .swiperContainer::-webkit-scrollbar-thumb:hover {
+    background-color: #dac017ae; /* Color of the thumb on hover */
+  }
+  
+  .swiperContainer::-webkit-scrollbar-track {
+    background-color: black; /* Color of the track */
+    border-radius: 3px;
+  }
+  
+  .swiperContainer::-webkit-scrollbar-track:hover {
+    background-color: black; /* Color of the track on hover */
+  }
+  .swiperContainer {
+    width: 100%;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 30px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: black yellow; /* For Firefox */
+  }
+  
+  .swiperBox {
+    width: 200px;
+    height: auto;
+    margin-right: 30px;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+  
+  .imageBox {
+    width: 200px;
+    height: 200px;
+    background-image: url(${Image});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  .title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    color: #FFF;
+    font-family: 'Mark-Heavy';
+    font-size: 19.908px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 108.3%;
+    text-transform: uppercase;
+  }
+  
+  .contentBox {
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .assessmentText {
+    color: wheat;
+    text-align: center;
+  }
+  
+  .flexContainer {
+    color: wheat;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .imageIcon {
+    margin: -16px;
+  }
+  
+  .countText {
+    color: wheat;
+  }
+  

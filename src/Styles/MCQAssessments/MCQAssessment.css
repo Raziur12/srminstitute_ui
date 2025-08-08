@@ -1,0 +1,546 @@
+.mcq-assessment {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .mcq-assessment__button-group {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.btnsss {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  justify-content: end;
+  gap: 3rem;
+}
+
+.text-right-mb-4{
+  display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 98%;
+}
+
+.red-row {
+  background-color: #89CFF0;
+  color: black;
+}
+
+.submitted-row {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+
+.assment-download-btn {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.popup-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+  .mcq-assessment__button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mcq-assessment__button:hover {
+    background-color: #0056b3;
+  }
+  
+  .mcq-assessment__content {
+    font-size: 18px;
+    color: #333;
+  }
+
+
+
+  /* Assessment  */
+  .assessments-container {
+    padding: 20px;
+  }
+  
+  .assessments-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .assessments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .assessments-table th,
+  .assessments-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .assessments-table th {
+    background-color: #5a5e8f;
+    color: #fff;
+  }
+  
+  .assessments-button {
+    padding: 8px 12px;
+    margin-right: 5px;
+    background-color: #444c55;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .assessments-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .assessments-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pagination-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .pagination-button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .pagination-page {
+    font-size: 18px;
+    color: #333;
+  }
+
+  .date-time-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .modal-close {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  /* Add Assessment css here */
+  .add-assessments-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-assessments-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+  }
+  
+  .add-assessments-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .form-group {
+    width: 48%; /* Half width with space between */
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 6px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+    resize: vertical;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .form-group-full {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  select#suborg,
+  select#trigger_point {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      color: #333;
+      box-sizing: border-box;
+      transition: border 0.3s ease;
+  }
+  
+  select#suborg:hover,
+  select#trigger_point:hover {
+      border-color: #888; /* Optional: Change the border color on hover */
+  }
+  
+  
+  .submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  
+
+
+  /* //Question Csss here */
+  .question-form {
+    position: fixed;
+    top: 61%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    width: 61vw;
+    height: 79vh;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow-y: auto;
+    margin-left: 4rem;
+}
+
+/* Close Icon Styling */
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    color: #333; /* Default color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    width: 24px; /* Adjust size */
+    height: 24px; /* Adjust size */
+}
+
+.close-icon:hover {
+    color: red; /* Change color on hover */
+}
+
+/* Flex Layout for Form Groups to align inputs and labels side by side */
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group label {
+    flex: 0.3; /* Label width */
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    flex: 0.7; /* Input/textarea width */
+    max-width: calc(70% - 15px); /* Prevent overflow with margin consideration */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Options Section Styling */
+.options-section {
+    margin-top: 20px;
+}
+
+.option-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.option-group label {
+    flex: 0.3; /* Label width for option inputs */
+    margin-right: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+.option-group input, 
+.option-group select,
+.option-group textarea {
+    flex: 0.7; /* Input width for options */
+    max-width: calc(70% - 15px); /* Prevent overflow with margin consideration */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Submit Button */
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+
+.add-season-drop {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.add-season-drop {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+label.checbox-assessment {
+    color: #000;
+}
+
+.form-group-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 buttons in a row */
+  gap: 10px; /* Spacing between buttons */
+}
+
+.assessments-button {
+  padding: 8px 12px; /* Adjust padding for small button size */
+  font-size: 14px; /* Adjust font size */
+  border: 1px solid #ccc; /* Optional styling */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  background: #f3c806;
+  color:#000
+}
+.drop-search-assement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+
+  margin-top: 2rem;
+}
+
+.question-divided {
+  border-top: 1px solid #ccc;  
+  border-bottom: 2px solid #434343;  
+  display: flex;             
+  padding: 10px 0;            
+  gap: 10px;                 
+  align-items: center;    
+  justify-content: center;  
+}
+
+.input-and-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+  border: 2px solid black;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.question-page-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.insert-symobole-image-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .button-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 buttons per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .button-grid {
+    grid-template-columns: 1fr; /* 1 button per row */
+  }
+}
+
+
+.questin-page-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 1rem;
+}
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .form-group, .option-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group label, 
+    .option-group label {
+        margin-bottom: 10px;
+    }
+
+    .question-form {
+        padding: 15px;
+        width: 95vw; /* Slightly larger popup on smaller screens */
+        height: 95vh;
+    }
+
+    .submit-button {
+        font-size: 16px; /* Adjust button size on smaller screens */
+    }
+}
