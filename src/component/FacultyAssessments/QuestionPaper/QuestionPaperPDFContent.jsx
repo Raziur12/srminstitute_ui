@@ -32,16 +32,17 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
-        marginBottom: '10px'
+        textAlign: 'left',
       }}>
-        <div>
+        <div >
           <div><strong>Academic Year:</strong> {questionPaper.academic_year}</div>
           <div><strong>Year & Semester:</strong> {questionPaper.year_and_semester}</div>
           <div><strong>Date & Session:</strong> {questionPaper.date_and_session}</div>
         </div>
-        <div style={{ textAlign: 'right' }}>
+        <div>
           <div><strong>Total Marks:</strong> {questionPaper.total_marks}</div>
           <div><strong>Duration:</strong> {questionPaper.duration} minutes</div>
+          <div><strong>Created By:</strong> {questionPaper.created_by.first_name} {questionPaper.created_by.last_name}</div>
         </div>
       </div>
 
@@ -74,13 +75,15 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
           <div style={{
             fontStyle: 'italic',
             marginBottom: '10px',
-            fontSize: '11px'
+            fontSize: '11px',
+            textAlign: 'left'
           }}>
             {category.instruction}
           </div>
           <div style={{
             fontSize: '11px',
-            marginBottom: '15px'
+            marginBottom: '15px',
+            textAlign: 'left'
           }}>
             Each Question: 1 marks | Total Questions: {category.questions?.length || 0}
           </div>
@@ -89,7 +92,8 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
           {category.questions?.map((question, qIndex) => (
             <div key={question.id} style={{
               marginBottom: '20px',
-              paddingLeft: '0'
+              paddingLeft: '0',
+              textAlign: 'left'
             }}>
               {/* Question Header */}
               <div style={{
