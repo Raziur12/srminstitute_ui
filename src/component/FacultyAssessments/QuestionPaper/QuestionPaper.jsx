@@ -112,6 +112,77 @@ const QuestionPaper = () => {
     navigate(`/preview-question-paper/${assessmentId}`);
   };
 
+  const handleDownloadPDF = async (assessmentId) => {
+    try {
+      setDownloading(assessmentId);
+      
+      // Fetch question paper data
+      const response = await axiosInstance.get(`papers/question-papers/${assessmentId}/`);
+      const questionPaper = response.data?.data;
+      
+      if (!questionPaper) {
+        throw new Error('Question paper data not found');
+      }
+
+      // Import html2pdf dynamically
+      const html2pdf = (await import('html2pdf.js')).default;
+      
+      // Create a temporary container for PDF content
+      const tempContainer = document.createElement('div');
+      tempContainer.style.position = 'absolute';
+      tempContainer.style.left = '-9999px';
+      tempContainer.style.top = '-9999px';
+      document.body.appendChild(tempContainer);
+
+      // Import and render PDF content component
+      const { default: QuestionPaperPDFContent } = await import('./QuestionPaperPDFContent');
+      const React = (await import('react')).default;
+      const ReactDOM = (await import('react-dom/client')).default;
+      
+      const root = ReactDOM.createRoot(tempContainer);
+      
+      // Render the PDF content
+      root.render(React.createElement(QuestionPaperPDFContent, { questionPaper }));
+      
+      // Wait for rendering to complete
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      const element = tempContainer.querySelector('#question-paper-content');
+      
+      if (!element) {
+        throw new Error('PDF content element not found');
+      }
+
+      const opt = {
+        margin: 0,
+        filename: `${questionPaper.name || 'question-paper'}.pdf`,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { 
+          scale: 2,
+          useCORS: true,
+          letterRendering: true
+        },
+        jsPDF: { 
+          unit: 'mm', 
+          format: 'a4', 
+          orientation: 'portrait' 
+        }
+      };
+
+      await html2pdf().set(opt).from(element).save();
+      
+      // Cleanup
+      root.unmount();
+      document.body.removeChild(tempContainer);
+      
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      Swal.fire('Error', 'Failed to generate PDF. Please try again.', 'error');
+    } finally {
+      setDownloading(null);
+    }
+  };
+
   const handleEditClick = async (test) => {
     try {
       // Fetch the detailed data for editing
@@ -228,6 +299,12 @@ const QuestionPaper = () => {
                     <button
                     onClick={() => handlePreviewClick(assessment.id)} 
                     >Preview</button>
+                    <button
+                    onClick={() => handleDownloadPDF(assessment.id)} 
+                    disabled={downloading === assessment.id}
+                    >
+                    {downloading === assessment.id ? 'Generating...' : 'Download PDF'}
+                    </button>
                   </div>
                 </td>
               </tr>

@@ -117,421 +117,240 @@ const PreviewQuestionPaper = () => {
   return (
     <>
     <div className="preview-container">
-      <div className="preview-wrapper">
-        <div className="header-box">
-          <h1>{questionPaper?.name || 'Question Paper Preview'}</h1>
-          <div className="header-details">
-            <span>Academic Year: {questionPaper?.academic_year}</span>
-            <span>Year & Semester: {questionPaper?.year_and_semester}</span>
-            <span>Date & Session: {questionPaper?.date_and_session}</span>
-          </div>
-        </div>
-
-        {/* <div className="info-cards"> */}
-         <div style={{
-          padding: '30px',
-          borderBottom: '1px solid #e9ecef',
-          backgroundColor: '#f8f9fa'
+      <div className="preview-wrapper" style={{
+        maxWidth: '210mm',
+        minHeight: '297mm',
+        margin: '0 auto',
+        backgroundColor: 'white',
+        padding: '10mm 20mm 20mm 20mm',
+        boxSizing: 'border-box',
+        border: '1px solid #ccc'
+      }}>
+        {/* SRM Institute Header */}
+        <div style={{ 
+          textAlign: 'center',
+          marginBottom: '5px',
+          fontFamily: 'Times New Roman, serif',
+          marginTop: '0px'
         }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '20px',
-            marginBottom: '20px'
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between',
+            marginBottom: '5px'
           }}>
-            {questionPaper.duration && (
-              <div style={{
-                backgroundColor: 'white',
-                padding: '15px',
-                borderRadius: '8px',
-                border: '1px solid #e9ecef',
-                textAlign: 'center'
-              }}>
-                <h4 style={{ margin: '0 0 5px', color: '#495057', fontSize: '14px' }}>Duration</h4>
-                <p style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#212529' }}>
-                  {questionPaper.duration} minutes
-                </p>
+            <div style={{ flex: 1, textAlign: 'center' }}>
+              <div style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '5px' }}>
+                SRM Institute of Science and Technology
               </div>
-            )}
-            {questionPaper.total_marks && (
-              <div style={{
-                backgroundColor: 'white',
-                padding: '15px',
-                borderRadius: '8px',
-                border: '1px solid #e9ecef',
-                textAlign: 'center'
-              }}>
-                <h4 style={{ margin: '0 0 5px', color: '#495057', fontSize: '14px' }}>Total Marks</h4>
-                <p style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#212529' }}>
-                  {questionPaper.total_marks}
-                </p>
+              <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '3px' }}>
+                Faculty of Management Studies
               </div>
-            )}
-            {questionPaper.categories && (
-              <div style={{
-                backgroundColor: 'white',
-                padding: '15px',
-                borderRadius: '8px',
-                border: '1px solid #e9ecef',
-                textAlign: 'center'
-              }}>
-                <h4 style={{ margin: '0 0 5px', color: '#495057', fontSize: '14px' }}>Categories</h4>
-                <p style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#212529' }}>
-                  {questionPaper.categories.length}
-                </p>
+              <div style={{ fontSize: '12px', marginBottom: '5px' }}>
+                Delhi – Meerut Road, Sikri Kalan, Ghaziabad, Uttar Pradesh – 201204
               </div>
-            )}
-            {questionPaper.created_by && (
-              <div style={{
-                backgroundColor: 'white',
-                padding: '15px',
-                borderRadius: '8px',
-                border: '1px solid #e9ecef',
-                textAlign: 'center'
-              }}>
-                <h4 style={{ margin: '0 0 5px', color: '#495057', fontSize: '14px' }}>Created By</h4>
-                <p style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#212529' }}>
-                  {questionPaper.created_by.first_name} {questionPaper.created_by.last_name}
-                </p>
+              <div style={{ fontSize: '12px', fontWeight: 'bold' }}>
+                Academic Year: {questionPaper.academic_year || '2024-25 (EVEN)'}
               </div>
-            )}
+            </div>
+            <div style={{ marginLeft: '20px' }}>
+              <img 
+                src="/static/media/srm-logo-cmpny.66553ef44736779f7948.png" 
+                alt="SRM Logo" 
+                style={{ 
+                  width: '170px', 
+                  height: '170px',
+                  objectFit: 'contain'
+                }}
+                onError={(e) => {
+                  e.target.style.display = 'none'
+                }}
+              />
+            </div>
           </div>
-           <button
-          onClick={handleOpenPDFModal}
-          style={{
-              backgroundColor: '#27ae60',
-              color: 'white',
-              border: 'none',
-              padding: '12px 24px',
-              borderRadius: '8px',
-              fontSize: '14px',
-              fontWeight: '600',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              transition: 'all 0.3s ease',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-              minWidth: '140px',
-              justifyContent: 'center'
-            }}
-        >
-          📄 Download PDF
-        </button>
         </div>
-        {/* </div> */}
 
-         {/* Categories and Questions Section */}
-        <div style={{ padding: '30px' }}>
-          <h2 style={{
-            margin: '0 0 25px',
-            fontSize: '24px',
-            color: '#2c3e50',
-            borderBottom: '2px solid #3498db',
-            paddingBottom: '10px'
-          }}>
-            Question Categories
-          </h2>
+        {/* Test Details */}
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between',
+          marginBottom: '5px',
+          fontSize: '12px',
+          fontFamily: 'Times New Roman, serif',
+          textAlign:'left'
+        }}>
+          <div>
+            <div><strong>Test:</strong> {questionPaper?.name || 'Internal Examination I'}</div>
+            <div><strong>Course Code & Title:</strong> {questionPaper.course_code || 'Course Code & Title'}</div>
+            <div><strong>Year & Sem:</strong> {questionPaper?.year_and_semester || 'Year & Sem'}</div>
+            {/* <div style={{ marginTop: '15px' }}><strong>Answer all questions</strong></div> */}
+          </div>
+          <div style={{ textAlign: 'right', textAlignLast: 'left' }}>
+            <div><strong>Date & Session:</strong></div>
+            <div><strong>Duration: {questionPaper?.duration || '60'} Minutes</strong></div>
+            <div><strong>Max. Marks: {questionPaper?.total_marks || '60'}</strong></div>
+          </div>
+        </div>
 
-          {questionPaper.categories && questionPaper.categories.length > 0 ? (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-              {questionPaper.categories.map((category, categoryIndex) => (
-                <div key={category.id} style={{
-                  border: '2px solid #e9ecef',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  backgroundColor: '#fafbfc'
-                }}>
-                  {/* Category Header */}
-                  <div style={{
-                    backgroundColor: '#3498db',
-                    color: 'white',
-                    padding: '20px 25px',
-                    borderBottom: '1px solid #2980b9'
-                  }}>
-                    <div style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      flexWrap: 'wrap',
-                      gap: '10px'
-                    }}>
-                      <h3 style={{
-                        margin: 0,
-                        fontSize: '20px',
-                        fontWeight: '600'
-                      }}>
-                        Category {category.category}
-                      </h3>
-                      <div style={{
-                        display: 'flex',
-                        gap: '15px',
-                        fontSize: '14px'
-                      }}>
-                        {category.each_question_marks && (
-                          <span style={{
-                            backgroundColor: 'rgba(255,255,255,0.2)',
-                            padding: '4px 12px',
-                            borderRadius: '20px'
-                          }}>
-                            {category.each_question_marks} marks each
-                          </span>
-                        )}
-                        {category.total_questions && (
-                          <span style={{
-                            backgroundColor: 'rgba(255,255,255,0.2)',
-                            padding: '4px 12px',
-                            borderRadius: '20px'
-                          }}>
-                            {category.total_questions} questions
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    {category.instruction && (
-                      <p style={{
-                        margin: '10px 0 0',
-                        fontSize: '16px',
-                        opacity: 0.9
-                      }}>
-                        {category.instruction}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Questions in Category */}
-                  <div style={{ padding: '25px' }}>
-                    {category.questions && category.questions.length > 0 ? (
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                        {category.questions.map((question, questionIndex) => (
-                          <div key={question.id} style={{
-                            border: '1px solid #dee2e6',
-                            borderRadius: '8px',
-                            padding: '20px',
-                            backgroundColor: 'white'
-                          }}>
-                            <div style={{
-                              display: 'flex',
-                              alignItems: 'flex-start',
-                              gap: '15px',
-                              marginBottom: '15px'
-                            }}>
-                              <div style={{
-                                backgroundColor: '#e74c3c',
-                                color: 'white',
-                                width: '35px',
-                                height: '35px',
-                                borderRadius: '50%',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                fontSize: '16px',
-                                fontWeight: '600',
-                                flexShrink: 0
-                              }}>
-                                {question.number}
-                              </div>
-                              <div style={{ flex: 1 }}>
-                                <div style={{
-                                  display: 'flex',
-                                  alignItems: 'center',
-                                  gap: '10px',
-                                  marginBottom: '10px',
-                                  flexWrap: 'wrap'
-                                }}>
-                                  <span style={{
-                                    backgroundColor: '#f39c12',
-                                    color: 'white',
-                                    padding: '4px 12px',
-                                    borderRadius: '20px',
-                                    fontSize: '12px',
-                                    fontWeight: '600',
-                                    textTransform: 'uppercase'
-                                  }}>
-                                    {question.question_type}
-                                  </span>
-                                  {question.marks && (
-                                    <span style={{
-                                      backgroundColor: '#27ae60',
-                                      color: 'white',
-                                      padding: '4px 12px',
-                                      borderRadius: '20px',
-                                      fontSize: '12px',
-                                      fontWeight: '600'
-                                    }}>
-                                      {question.marks} marks
-                                    </span>
-                                  )}
-                                  {question.co && (
-                                    <span style={{
-                                      backgroundColor: '#9b59b6',
-                                      color: 'white',
-                                      padding: '4px 12px',
-                                      borderRadius: '20px',
-                                      fontSize: '12px',
-                                      fontWeight: '600'
-                                    }}>
-                                      CO: {question.co}
-                                    </span>
-                                  )}
-                                  {question.po && (
-                                    <span style={{
-                                      backgroundColor: '#34495e',
-                                      color: 'white',
-                                      padding: '4px 12px',
-                                      borderRadius: '20px',
-                                      fontSize: '12px',
-                                      fontWeight: '600'
-                                    }}>
-                                      PO: {question.po}
-                                    </span>
-                                  )}
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Sub Questions */}
-                            {question.sub_questions && question.sub_questions.length > 0 && (
-                              <div style={{ marginLeft: '50px' }}>
-                                {question.sub_questions.map((subQuestion, subIndex) => (
-                                  <div key={subQuestion.id} style={{
-                                    marginBottom: '15px',
-                                    padding: '15px',
-                                    backgroundColor: '#f8f9fa',
-                                    borderRadius: '6px',
-                                    border: '1px solid #e9ecef'
-                                  }}>
-                                    <div style={{
-                                      display: 'flex',
-                                      alignItems: 'flex-start',
-                                      gap: '10px',
-                                      marginBottom: '10px'
-                                    }}>
-                                      {subQuestion.option_label && (
-                                        <div style={{
-                                          backgroundColor: '#6c757d',
-                                          color: 'white',
-                                          width: '25px',
-                                          height: '25px',
-                                          borderRadius: '50%',
-                                          display: 'flex',
-                                          alignItems: 'center',
-                                          justifyContent: 'center',
-                                          fontSize: '12px',
-                                          fontWeight: '600',
-                                          flexShrink: 0
-                                        }}>
-                                          {subQuestion.option_label}
-                                        </div>
-                                      )}
-                                      <div style={{ flex: 1 }}>
-                                        <p style={{
-                                          margin: '0 0 10px',
-                                          fontSize: '16px',
-                                          color: '#2c3e50',
-                                          lineHeight: '1.5'
-                                        }}>
-                                          {subQuestion.text}
-                                        </p>
-                                        
-                                        {/* Question Image */}
-                                        {subQuestion.image && renderImage(subQuestion.image, "Question Image")}
-                                        
-                                        {/* Options for MCQ */}
-                                        {subQuestion.options && subQuestion.options.length > 0 && (
-                                          <div style={{ marginTop: '10px' }}>
-                                            <h5 style={{
-                                              margin: '0 0 8px',
-                                              fontSize: '14px',
-                                              color: '#6c757d',
-                                              fontWeight: '600'
-                                            }}>
-                                              Options:
-                                            </h5>
-                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                                              {subQuestion.options.map((option, optionIndex) => (
-                                                <div key={optionIndex} style={{
-                                                  display: 'flex',
-                                                  alignItems: 'flex-start',
-                                                  gap: '8px',
-                                                  padding: '6px 10px',
-                                                  backgroundColor: 'white',
-                                                  borderRadius: '4px',
-                                                  border: '1px solid #dee2e6'
-                                                }}>
-                                                  <div style={{
-                                                    width: '18px',
-                                                    height: '18px',
-                                                    borderRadius: '50%',
-                                                    border: '2px solid #6c757d',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    fontSize: '10px',
-                                                    fontWeight: '600',
-                                                    color: '#6c757d',
-                                                    flexShrink: 0,
-                                                    marginTop: '2px'
-                                                  }}>
-                                                    {String.fromCharCode(65 + optionIndex)}
-                                                  </div>
-                                                  <div style={{ flex: 1 }}>
-                                                    <span style={{ fontSize: '14px', color: '#495057' }}>
-                                                      {option.option_text || option.text || option}
-                                                    </span>
-                                                    {/* Option Image */}
-                                                    {option.image && renderImage(option.image, `Option ${String.fromCharCode(65 + optionIndex)} Image`, "200px", "150px")}
-                                                  </div>
-                                                </div>
-                                              ))}
-                                            </div>
-                                          </div>
-                                        )}
-                                      </div>
-                                    </div>
-                                  </div>
-                                ))}
-                              </div>
-                            )}
-
-                            {/* Question Image (if no sub-questions) */}
-                            {(!question.sub_questions || question.sub_questions.length === 0) && question.image && (
-                              <div style={{ marginLeft: '50px', marginTop: '10px' }}>
-                                {renderImage(question.image, "Question Image")}
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    ) : (
-                      <div style={{
-                        textAlign: 'center',
-                        padding: '20px',
-                        color: '#6c757d'
-                      }}>
-                        <p style={{ margin: 0, fontSize: '16px' }}>No questions in this category.</p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div style={{
-              textAlign: 'center',
-              padding: '40px',
-              color: '#6c757d'
+        {/* Part A */}
+        {questionPaper.categories && questionPaper.categories[0] && questionPaper.categories[0].questions && questionPaper.categories[0].questions.length > 0 && (
+          <div style={{ marginBottom: '40px', fontFamily: 'Times New Roman, serif', marginTop: '5px' }}>
+            <div style={{ 
+              textAlign: 'center', 
+              fontSize: '14px', 
+              fontWeight: 'bold',
+              marginBottom: '5px'
             }}>
-              <p style={{ margin: 0, fontSize: '16px' }}>No categories available for this paper.</p>
+              Part - A
             </div>
-          )}
-        </div>
+            <div style={{ 
+              display: 'flex',
+              justifyContent: 'space-between',
+              fontSize: '12px',
+              marginBottom: '10px'
+            }}>
+              <div>Answer all questions</div>
+              <div>(5Q x 2M = 10 Marks)</div>
+            </div>
+            
+            <div style={{ display: 'flex', marginBottom: '10px', fontSize: '12px', fontWeight: 'bold' }}>
+              <div style={{ width: '50px', textAlign: 'center' }}>Q.No</div>
+              <div style={{ flex: 1, textAlign: 'left', paddingLeft: '20px' }}> Question</div>
+              <div style={{ width: '60px', textAlign: 'center' }}>Marks</div>
+              <div style={{ width: '40px', textAlign: 'center' }}>BL</div>
+              <div style={{ width: '40px', textAlign: 'center' }}>CO</div>
+              <div style={{ width: '40px', textAlign: 'center' }}>PO</div>
+            </div>
+            
+            {questionPaper.categories[0].questions.map((question, index) => (
+              <div key={question.id} style={{ 
+                display: 'flex', 
+                marginBottom: '15px', 
+                fontSize: '12px',
+                alignItems: 'flex-start',
+                textAlign: 'left'
+              }}>
+                <div style={{ width: '50px', textAlign: 'center', paddingTop: '2px' }}>
+                  {index + 1}
+                </div>
+                <div style={{ flex: 1, paddingLeft: '20px', lineHeight: '1.4' }}>
+                  {question.sub_questions && question.sub_questions.length > 0 ? (
+                    <div>
+                      {question.sub_questions.map((sub, subIndex) => (
+                        <div key={sub.id} style={{ marginBottom: '8px' }}>
+                          <div>{sub.text}</div>
+                          {sub.options && sub.options.length > 0 && (
+                            <div style={{ marginLeft: '15px', marginTop: '5px' }}>
+                              {sub.options.map((opt, optIdx) => (
+                                <div key={optIdx} style={{ marginBottom: '2px' }}>
+                                  {String.fromCharCode(65 + optIdx)}.&nbsp;{opt.option_text || opt.text || opt}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div>{question.text || question.question_type}</div>
+                  )}
+                </div>
+                <div style={{ width: '60px', textAlign: 'center', paddingTop: '2px' }}>
+                  {question.marks || '2'}
+                </div>
+                <div style={{ width: '40px', textAlign: 'center', paddingTop: '2px' }}>
+                  {question.bloom_level || ''}
+                </div>
+                <div style={{ width: '40px', textAlign: 'center', paddingTop: '2px' }}>
+                  {question.course_outcome || question.co || ''}
+                </div>
+                <div style={{ width: '40px', textAlign: 'center', paddingTop: '2px' }}>
+                  {question.program_outcome || question.po || ''}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
-         {/* Footer */}
+        {/* Part B */}
+        {questionPaper.categories && questionPaper.categories[1] && questionPaper.categories[1].questions && questionPaper.categories[1].questions.length > 0 && (
+          <div style={{ marginBottom: '30px', fontFamily: 'Times New Roman, serif' }}>
+            <div style={{ 
+              textAlign: 'center', 
+              fontSize: '14px', 
+              fontWeight: 'bold',
+              marginBottom: '5px'
+            }}>
+              Part B
+            </div>
+            <div style={{ 
+              display: 'flex',
+              justifyContent: 'space-between',
+              fontSize: '12px',
+              marginBottom: '10px'
+            }}>
+              <div>Answer any 5 questions</div>
+              <div>(5Q x 10M = 50 Marks)</div>
+            </div>
+            
+            {questionPaper.categories[1].questions.map((question, index) => (
+              <div key={question.id} style={{ 
+                display: 'flex', 
+                marginBottom: '25px', 
+                fontSize: '12px',
+                alignItems: 'flex-start',
+                textAlignLast: 'left'
+              }}>
+                <div style={{ width: '50px', textAlign: 'center', paddingTop: '2px' }}>
+                  {index}.
+                </div>
+                <div style={{ flex: 1, paddingLeft: '20px', lineHeight: '1.4' }}>
+                  {question.sub_questions && question.sub_questions.length > 0 ? (
+                    <div>
+                      {question.sub_questions.map((sub, subIndex) => (
+                        <div key={sub.id} style={{ marginBottom: '15px' }}>
+                          <div><strong>{sub.option_label ? `(${sub.option_label})` : ''}</strong> {sub.text}</div>
+                          {sub.options && sub.options.length > 0 && (
+                            <div style={{ marginLeft: '20px', marginTop: '5px' }}>
+                              {sub.options.map((opt, optIdx) => (
+                                <div key={optIdx} style={{ marginBottom: '2px' }}>
+                                  {String.fromCharCode(65 + optIdx)}.&nbsp;{opt.option_text || opt.text || opt}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                          {subIndex < question.sub_questions.length - 1 && (
+                            <div style={{ marginTop: '10px', fontSize: '10px', textAlign: 'center' }}>
+                              (OR)
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div>{question.text || question.question_type}</div>
+                  )}
+                </div>
+                <div style={{ width: '60px', textAlign: 'center', paddingTop: '2px' }}>
+                  {question.marks || '10'}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Display message if no categories */}
+        {(!questionPaper.categories || questionPaper.categories.length === 0) && (
+          <div style={{ textAlign: 'center', fontStyle: 'italic', color: '#666', marginTop: '50px' }}>
+            No question data available
+          </div>
+        )}
+
+        {/* Footer */}
         <div style={{
-          backgroundColor: '#f8f9fa',
+          backgroundColor: 'white',
           padding: '20px 30px',
-          borderTop: '1px solid #e9ecef',
+          borderTop: '1px solid #000',
           textAlign: 'center'
         }}>
           <div style={{
@@ -543,16 +362,16 @@ const PreviewQuestionPaper = () => {
           }}>
             <p style={{
               margin: 0,
-              color: '#6c757d',
-              fontSize: '14px'
+              color: '#000',
+              fontSize: '12px'
             }}>
               Question Paper ID: {id}
             </p>
             {questionPaper.created_at && (
               <p style={{
                 margin: 0,
-                color: '#6c757d',
-                fontSize: '14px'
+                color: '#000',
+                fontSize: '12px'
               }}>
                 Created: {new Date(questionPaper.created_at).toLocaleDateString()}
               </p>

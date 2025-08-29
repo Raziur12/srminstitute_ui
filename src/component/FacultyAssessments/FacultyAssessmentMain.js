@@ -941,7 +941,7 @@ const FacultyAssessmentMain = () => {
             ))}
             
 
-            {/* Date & Session field */}
+            {/* Date & Session field
             <div style={{ marginBottom: '20px' }}>
               <label style={{
                 display: 'block',
@@ -964,7 +964,6 @@ const FacultyAssessmentMain = () => {
                   transition: 'all 0.3s ease',
                   boxSizing: 'border-box'
                 }}
-                placeholder="Enter date and session (e.g., General Knowledge)"
                 onFocus={(e) => {
                   e.target.style.borderColor = '#3498db';
                   e.target.style.boxShadow = '0 0 0 3px rgba(52, 152, 219, 0.1)';
@@ -974,7 +973,7 @@ const FacultyAssessmentMain = () => {
                   e.target.style.boxShadow = 'none';
                 }}
               />
-            </div>
+            </div> */}
 
             {/* Year & Semester field */}
             <div style={{ marginBottom: '20px' }}>
@@ -985,8 +984,9 @@ const FacultyAssessmentMain = () => {
                 marginBottom: '8px',
                 fontSize: '14px'
               }}>Year & Semester</label>
-              <select
+              <input
                 name="year_and_semester"
+                type="text"
                 value={formData.year_and_semester}
                 onChange={handleFormChange}
                 style={{
@@ -996,9 +996,7 @@ const FacultyAssessmentMain = () => {
                   borderRadius: '8px',
                   fontSize: '14px',
                   transition: 'all 0.3s ease',
-                  boxSizing: 'border-box',
-                  backgroundColor: '#fff',
-                  cursor: 'pointer'
+                  boxSizing: 'border-box'
                 }}
                 onFocus={(e) => {
                   e.target.style.borderColor = '#3498db';
@@ -1008,18 +1006,7 @@ const FacultyAssessmentMain = () => {
                   e.target.style.borderColor = '#e1e8ed';
                   e.target.style.boxShadow = 'none';
                 }}
-              >
-                <option value="">Select Year & Semester</option>
-                <option value="1st Year - 1st Semester">1st Year - 1st Semester</option>
-                <option value="1st Year - 2nd Semester">1st Year - 2nd Semester</option>
-                <option value="2nd Year - 1st Semester">2nd Year - 1st Semester</option>
-                <option value="2nd Year - 2nd Semester">2nd Year - 2nd Semester</option>
-                <option value="3rd Year - 1st Semester">3rd Year - 1st Semester</option>
-                <option value="3rd Year - 2nd Semester">3rd Year - 2nd Semester</option>
-                <option value="4th Year - 1st Semester">4th Year - 1st Semester</option>
-                <option value="4th Year - 2nd Semester">4th Year - 2nd Semester</option>
-                <option value="2nd - 3rd Semester">2nd - 3rd Semester</option>
-              </select>
+              />
             </div>
 
             {/* Question File field */}
