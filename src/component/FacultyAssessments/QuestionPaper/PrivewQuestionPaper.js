@@ -1,6 +1,6 @@
 // File: PreviewQuestionPaper.jsx
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import axiosInstance from '../../../interceptor/axiosInstance'
 import html2pdf from 'html2pdf.js'
 import Swal from 'sweetalert2'
@@ -9,6 +9,7 @@ import QuestionPaperPDFContent from './QuestionPaperPDFContent'
 import '../../../Styles/QuestionPaperPreview/QuestionPaperPreview.css'
 
 const PreviewQuestionPaper = () => {
+  const navigate = useNavigate();
   const { id } = useParams()
   const [questionPaper, setQuestionPaper] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -133,6 +134,21 @@ const PreviewQuestionPaper = () => {
   return (
     <>
     <div className="preview-container">
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+        <button 
+          onClick={() => navigate('/faculty')} 
+          style={{
+            padding: '10px 16px',
+            backgroundColor: '#95a5a6',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer', 
+          }}
+        >
+          ← Back to Question Papers
+        </button>
+      </div>
       <div className="preview-wrapper">
         <QuestionPaperPDFContent questionPaper={questionPaper} />
         
