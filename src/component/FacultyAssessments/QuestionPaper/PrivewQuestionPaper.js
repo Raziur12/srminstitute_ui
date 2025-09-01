@@ -86,8 +86,24 @@ const PreviewQuestionPaper = () => {
         .set({
           margin: 10,
           filename: `${questionPaper.name || 'Question_Paper'}.pdf`,
-          html2canvas: { scale: 2, useCORS: true },
-          jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' }
+          html2canvas: { 
+            scale: 2, 
+            useCORS: true,
+            allowTaint: true,
+            letterRendering: true
+          },
+          jsPDF: { 
+            unit: 'pt', 
+            format: 'a4', 
+            orientation: 'portrait',
+            compress: true
+          },
+          pagebreak: { 
+            mode: ['avoid-all', 'css', 'legacy'],
+            before: '.page-break-before',
+            after: '.page-break-after',
+            avoid: '.page-break-avoid'
+          }
         })
         .from(element)
         .save()

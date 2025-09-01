@@ -142,16 +142,38 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
 
         {/* Display all categories dynamically */}
         {categories.length > 0 ? (
-          categories.map((category, categoryIndex) => (
+          categories
+            .sort((a, b) => {
+              // Sort by category name (A, B, C, D, etc.)
+              const getPartLetter = (cat) => {
+                if (cat.category) {
+                  // Extract letter from "Part A", "A", etc.
+                  const match = cat.category.match(/([A-Z])/);
+                  return match ? match[1] : cat.category;
+                }
+                return String.fromCharCode(65 + categories.indexOf(cat));
+              };
+              
+              const categoryA = getPartLetter(a);
+              const categoryB = getPartLetter(b);
+              return categoryA.localeCompare(categoryB);
+            })
+            .map((category, sortedIndex) => (
             category.questions && category.questions.length > 0 && (
-              <div key={category.id || categoryIndex} style={{ marginBottom: '40px', fontFamily: 'Times New Roman, serif', marginTop: '5px' }}>
+              <div key={category.id || sortedIndex} style={{ 
+                marginBottom: '40px', 
+                fontFamily: 'Times New Roman, serif', 
+                marginTop: sortedIndex === 0 ? '30px' : '80px',
+                pageBreakInside: 'avoid',
+                breakInside: 'avoid'
+              }}>
                 <div style={{ 
                   textAlign: 'center', 
                   fontSize: '14px', 
                   fontWeight: 'bold',
                   marginBottom: '5px'
                 }}>
-                  Part - {category.category || String.fromCharCode(65 + categoryIndex)}
+                  Part - {category.category || String.fromCharCode(65 + sortedIndex)}
                 </div>
                 <div style={{ 
                   display: 'flex',
@@ -163,7 +185,7 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
                   <div>({category.questions.length}Q x {category.each_question_marks || '2'}M = {(category.questions.length * (category.each_question_marks || 2))} Marks)</div>
                 </div>
                 
-                {categoryIndex === 0 && (
+                {sortedIndex === 0 && (
                   <div style={{ display: 'flex', marginBottom: '10px', fontSize: '12px', fontWeight: 'bold' }}>
                     <div style={{ width: '50px', textAlign: 'center' }}>Q.No</div>
                     <div style={{ flex: 1, textAlign: 'left', paddingLeft: '20px' }}> Question</div>
@@ -180,18 +202,24 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
                     marginBottom: '15px', 
                     fontSize: '12px',
                     alignItems: 'flex-start',
-                    textAlign: 'left'
+                    textAlign: 'left',
+                    pageBreakInside: 'avoid',
+                    breakInside: 'avoid'
                   }}>
                     <div style={{ width: '50px', textAlign: 'center', paddingTop: '2px' }}>
-                      {categoryIndex === 0 ? (questionIndex + 1) : `${questionIndex + 1}.`}
+                      {sortedIndex === 0 ? (questionIndex + 1) : `${questionIndex + 1}.`}
                     </div>
                     <div style={{ flex: 1, paddingLeft: '20px', lineHeight: '1.4' }}>
                       {question.sub_questions && question.sub_questions.length > 0 ? (
                         <div>
                           {question.sub_questions.map((sub, subIndex) => (
-                            <div key={sub.id || subIndex} style={{ marginBottom: '8px' }}>
+                            <div key={sub.id || subIndex} style={{ 
+                              marginBottom: '8px',
+                              pageBreakInside: 'avoid',
+                              breakInside: 'avoid'
+                            }}>
                               <div>
-                                {categoryIndex > 0 && sub.option_label ? `(${sub.option_label}) ` : ''}
+                                {sortedIndex > 0 && sub.option_label ? `(${sub.option_label}) ` : ''}
                                 {sub.text}
                               </div>
                               {sub.options && sub.options.length > 0 && (
@@ -218,7 +246,7 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
                     <div style={{ width: '60px', textAlign: 'center', paddingTop: '2px' }}>
                       {question.marks || category.each_question_marks || '2'}
                     </div>
-                    {categoryIndex === 0 && (
+                    {sortedIndex === 0 && (
                       <>
                         <div style={{ width: '40px', textAlign: 'center', paddingTop: '2px' }}>
                           {question.bloom_level || question.bl || ''}
