@@ -32,7 +32,24 @@ const SubQuestions = () => {
   const fetchSubQuestions = async () => {
     try {
       const res = await axiosInstance.get(`papers/sub-questions/?question_id=${id}`);
-      setSubQuestions(res.data.data.data || []);
+      console.log('Sub-questions API Response:', res.data); // Debug log
+      
+      // Handle different possible response structures
+      let subQuestions = [];
+      if (res.data.data) {
+        if (Array.isArray(res.data.data)) {
+          subQuestions = res.data.data;
+        } else if (res.data.data.data && Array.isArray(res.data.data.data)) {
+          subQuestions = res.data.data.data;
+        } else if (res.data.data.results && Array.isArray(res.data.data.results)) {
+          subQuestions = res.data.data.results;
+        }
+      } else if (Array.isArray(res.data)) {
+        subQuestions = res.data;
+      }
+      
+      console.log('Processed sub-questions:', subQuestions); // Debug log
+      setSubQuestions(subQuestions);
     } catch (error) {
       console.error('Failed to fetch sub-questions', error);
       Swal.fire('Error', 'Failed to fetch sub-questions', 'error');

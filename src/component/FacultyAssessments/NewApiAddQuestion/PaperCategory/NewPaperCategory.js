@@ -34,7 +34,24 @@ const NewPaperCategory = () => {
   const fetchCategories = async () => {
     try {
       const res = await axiosInstance.get(`papers/paper-categories/?questionpaper_id=${id}`);
-      setActiveData(res.data.data.data || []);
+      console.log('Categories API Response:', res.data); // Debug log
+      
+      // Handle different possible response structures
+      let categories = [];
+      if (res.data.data) {
+        if (Array.isArray(res.data.data)) {
+          categories = res.data.data;
+        } else if (res.data.data.data && Array.isArray(res.data.data.data)) {
+          categories = res.data.data.data;
+        } else if (res.data.data.results && Array.isArray(res.data.data.results)) {
+          categories = res.data.data.results;
+        }
+      } else if (Array.isArray(res.data)) {
+        categories = res.data;
+      }
+      
+      console.log('Processed categories:', categories); // Debug log
+      setActiveData(categories);
     } catch (error) {
       console.error('Failed to fetch categories', error);
       Swal.fire('Error', 'Failed to fetch categories', 'error');

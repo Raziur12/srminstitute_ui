@@ -38,7 +38,24 @@ const NewCategoryQuestion = () => {
   const fetchQuestions = async () => {
     try {
       const res = await axiosInstance.get(`papers/questions/?category_id=${id}`);
-      setQuestions(res.data.data.data || []);
+      console.log('Questions API Response:', res.data); // Debug log
+      
+      // Handle different possible response structures
+      let questions = [];
+      if (res.data.data) {
+        if (Array.isArray(res.data.data)) {
+          questions = res.data.data;
+        } else if (res.data.data.data && Array.isArray(res.data.data.data)) {
+          questions = res.data.data.data;
+        } else if (res.data.data.results && Array.isArray(res.data.data.results)) {
+          questions = res.data.data.results;
+        }
+      } else if (Array.isArray(res.data)) {
+        questions = res.data;
+      }
+      
+      console.log('Processed questions:', questions); // Debug log
+      setQuestions(questions);
     } catch (error) {
       console.error('Failed to fetch questions', error);
       Swal.fire('Error', 'Failed to fetch questions', 'error');
@@ -198,17 +215,8 @@ const NewCategoryQuestion = () => {
         </h2>
         <button 
           onClick={() => {
-            // Navigate back to paper-category with the questionpaper ID
-            console.log('Category object:', category); // Debug log
-            const questionpaperId = category?.questionpaper || category?.questionpaper_id || category?.question_paper || category?.id || '';
-            console.log('Navigating to:', `/paper-category/${questionpaperId}`); // Debug log
-            
-            if (questionpaperId) {
-              navigate(`/paper-category/${questionpaperId}`);
-            } else {
-              // Fallback: navigate back using browser history
-              navigate(-1);
-            }
+            // Navigate back using browser history to avoid ID issues
+            navigate(-1);
           }} 
           style={{
             padding: '8px 16px',
