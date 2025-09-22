@@ -19,6 +19,7 @@ const SubQuestions = () => {
     text: '',
   });
 
+
   const fetchQuestion = async () => {
     try {
       const res = await axiosInstance.get(`papers/questions/${id}/`);
@@ -170,6 +171,7 @@ const SubQuestions = () => {
     });
   };
 
+
   if (loading) {
     return (
       <div className="mcq-assessment">
@@ -229,7 +231,7 @@ const SubQuestions = () => {
         </div>
       </div>
 
-      <table className="custom-table">
+      <table className="custom-table sub-questions-table">
         <thead>
           <tr>
             <th>Option Label</th>
@@ -262,17 +264,31 @@ const SubQuestions = () => {
                 </td>
                 <td style={{ maxWidth: '400px', wordWrap: 'break-word' }}>{item.text}</td>
                 <td>
-                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
+                    <button 
+                      onClick={() => navigate(`/mcq-options/${item.id}`)}
+                      style={{
+                        padding: '4px 8px',
+                        backgroundColor: '#3498db',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        fontSize: '10px'
+                      }}
+                    >
+                      📝 Options
+                    </button>
                     <button 
                       onClick={() => handleEditSubQuestion(item)}
                       style={{
-                        padding: '6px 12px',
+                        padding: '4px 8px',
                         backgroundColor: '#f39c12',
                         color: 'white',
                         border: 'none',
                         borderRadius: '4px',
                         cursor: 'pointer',
-                        fontSize: '12px'
+                        fontSize: '10px'
                       }}
                     >
                       ✏️ Edit
@@ -280,13 +296,13 @@ const SubQuestions = () => {
                     <button 
                       onClick={() => handleDeleteSubQuestion(item.id)}
                       style={{
-                        padding: '6px 12px',
+                        padding: '4px 8px',
                         backgroundColor: '#e74c3c',
                         color: 'white',
                         border: 'none',
                         borderRadius: '4px',
                         cursor: 'pointer',
-                        fontSize: '12px'
+                        fontSize: '10px'
                       }}
                     >
                       🗑️ Delete
@@ -379,6 +395,7 @@ const SubQuestions = () => {
           </div>
         </div>
       )}
+
     </div>
   );
 };

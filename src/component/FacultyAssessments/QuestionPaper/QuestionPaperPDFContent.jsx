@@ -237,6 +237,58 @@ const QuestionPaperPDFContent = ({ questionPaper, questionPaperId }) => {
                                 {sub.option_label ? `(${sub.option_label}) ` : ''}
                                 {sub.text}
                               </div>
+                              
+                              {/* MCQ Options */}
+                              {sub.options && sub.options.length > 0 && (
+                                <div style={{ 
+                                  marginLeft: '20px', 
+                                  // marginTop: '5px',
+                                  pageBreakInside: 'avoid'
+                                }}>
+                                  {sub.options
+                                    .sort((a, b) => {
+                                      // Sort by option label (A, B, C, D)
+                                      const textA = (a.text || '').replace(' [CORRECT]', '');
+                                      const textB = (b.text || '').replace(' [CORRECT]', '');
+                                      const labelA = textA.match(/^([A-Z])\.\s*(.*)$/)?.[1] || 'Z';
+                                      const labelB = textB.match(/^([A-Z])\.\s*(.*)$/)?.[1] || 'Z';
+                                      return labelA.localeCompare(labelB);
+                                    })
+                                    .map((opt, optIdx) => {
+                                      // Parse option text to extract label and content
+                                      let displayText = opt.text || opt.option_text || opt;
+                                      
+                                      // Remove [CORRECT] indicator for display
+                                      displayText = displayText.replace(' [CORRECT]', '');
+                                      
+                                      // Check if text already has label format (A. text)
+                                      const labelMatch = displayText.match(/^([A-Z])\.\s*(.*)$/);
+                                      if (labelMatch) {
+                                        // Already has label, use as is
+                                        return (
+                                          <div key={optIdx} style={{ 
+                                            marginBottom: '2px',
+                                            fontSize: '11px',
+                                            lineHeight: '1.3'
+                                          }}>
+                                            {displayText}
+                                          </div>
+                                        );
+                                      } else {
+                                        // Add label if missing
+                                        return (
+                                          <div key={optIdx} style={{ 
+                                            marginBottom: '2px',
+                                            fontSize: '11px',
+                                            lineHeight: '1.3'
+                                          }}>
+                                            {String.fromCharCode(65 + optIdx)}. {displayText}
+                                          </div>
+                                        );
+                                      }
+                                    })}
+                                </div>
+                              )}
                             </div>
                           ))}
                         </div>

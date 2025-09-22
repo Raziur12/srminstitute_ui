@@ -124,6 +124,59 @@ const QuestionPaper = () => {
         throw new Error('Question paper data not found');
       }
 
+      // Fetch MCQ options for each sub-question
+      if (questionPaper.categories) {
+        const optionPromises = [];
+        const subQuestionMap = new Map();
+        
+        // Collect all MCQ sub-questions and create API promises
+        for (const category of questionPaper.categories) {
+          if (category.questions) {
+            for (const question of category.questions) {
+              if (question.sub_questions) {
+                for (const subQuestion of question.sub_questions) {
+                  // Only fetch options for MCQ questions
+                  if (question.question_type === 'mcq') {
+                    subQuestionMap.set(subQuestion.id, subQuestion);
+                    
+                    const optionPromise = axiosInstance.get(`papers/mcq-options/?sub_question_id=${subQuestion.id}`)
+                      .then(optionsRes => {
+                        return { subQuestionId: subQuestion.id, data: optionsRes.data };
+                      })
+                      .catch(error => {
+                        console.error(`PDF: Failed to fetch options for sub-question ${subQuestion.id}:`, error);
+                        return { subQuestionId: subQuestion.id, data: null, error };
+                      });
+                    
+                    optionPromises.push(optionPromise);
+                  } else {
+                    // For non-MCQ questions, don't fetch options
+                    subQuestion.options = [];
+                  }
+                }
+              }
+            }
+          }
+        }
+        
+        // Wait for all option API calls to complete
+        if (optionPromises.length > 0) {
+          const optionResults = await Promise.all(optionPromises);
+          
+          // Process results and attach to sub-questions
+          optionResults.forEach(result => {
+            const subQuestion = subQuestionMap.get(result.subQuestionId);
+            if (subQuestion) {
+              if (result.data && result.data.status === 'success' && result.data.data && result.data.data.data) {
+                subQuestion.options = result.data.data.data;
+              } else {
+                subQuestion.options = [];
+              }
+            }
+          });
+        }
+      }
+
       // Import html2pdf dynamically
       const html2pdf = (await import('html2pdf.js')).default;
       

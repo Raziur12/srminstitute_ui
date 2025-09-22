@@ -262,3 +262,19 @@ textarea[style*="width: 100%"][style*="border"] {
   background-color: #e74c3c !important;
   color: white !important;
 }
+
+/* Sub-questions table specific styling */
+.sub-questions-table th:nth-child(1),
+.sub-questions-table td:nth-child(1) {
+  width: 15% !important; /* Reduced Option Label column */
+}
+
+.sub-questions-table th:nth-child(2),
+.sub-questions-table td:nth-child(2) {
+  width: 65% !important; /* Increased Question Text column */
+}
+
+.sub-questions-table th:nth-child(3),
+.sub-questions-table td:nth-child(3) {
+  width: 20% !important; /* Actions column */
+}

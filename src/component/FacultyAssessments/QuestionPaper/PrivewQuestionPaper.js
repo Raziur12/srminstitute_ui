@@ -21,7 +21,62 @@ const PreviewQuestionPaper = () => {
     const fetchData = async () => {
       try {
         const res = await axiosInstance.get(`papers/question-papers/${id}/`)
-        setQuestionPaper(res.data.data)
+        const questionPaperData = res.data.data
+        
+        // Fetch MCQ options for each sub-question
+        if (questionPaperData.categories) {
+          const optionPromises = [];
+          const subQuestionMap = new Map();
+          
+          // Collect all MCQ sub-questions and create API promises
+          for (const category of questionPaperData.categories) {
+            if (category.questions) {
+              for (const question of category.questions) {
+                if (question.sub_questions) {
+                  for (const subQuestion of question.sub_questions) {
+                    // Only fetch options for MCQ questions
+                    if (question.question_type === 'mcq') {
+                      subQuestionMap.set(subQuestion.id, subQuestion);
+                      
+                      const optionPromise = axiosInstance.get(`papers/mcq-options/?sub_question_id=${subQuestion.id}`)
+                        .then(optionsRes => {
+                          return { subQuestionId: subQuestion.id, data: optionsRes.data };
+                        })
+                        .catch(error => {
+                          console.error(`Failed to fetch options for sub-question ${subQuestion.id}:`, error);
+                          return { subQuestionId: subQuestion.id, data: null, error };
+                        });
+                      
+                      optionPromises.push(optionPromise);
+                    } else {
+                      // For non-MCQ questions, don't fetch options
+                      subQuestion.options = [];
+                    }
+                  }
+                }
+              }
+            }
+          }
+          
+          // Wait for all option API calls to complete
+          if (optionPromises.length > 0) {
+            const optionResults = await Promise.all(optionPromises);
+            
+            // Process results and attach to sub-questions
+            optionResults.forEach(result => {
+              const subQuestion = subQuestionMap.get(result.subQuestionId);
+              if (subQuestion) {
+                if (result.data && result.data.status === 'success' && result.data.data && result.data.data.data) {
+                  subQuestion.options = result.data.data.data;
+                } else {
+                  subQuestion.options = [];
+                }
+              }
+            });
+          }
+        }
+        
+        setQuestionPaper(questionPaperData)
       } catch (err) {
         setError("Failed to load paper")
       } finally {

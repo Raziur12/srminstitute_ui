@@ -159,7 +159,7 @@ function App() {
                 <Route path="/paper-category/:id" element={<NewPaperCategory />} /> 
                 <Route path="/new-category-question/:id" element={<NewCategoryQuestion />} />
                 <Route path="/sub-questions/:id" element={<SubQuestions />} />
-                <Route path="/mcq-questions/:id" element={<MCQQuestions />} />
+                <Route path="/mcq-options/:id" element={<MCQQuestions />} />
 
                 <Route path="/preview-question-paper/:id" element={<PrivewQuestionPaper />} />
                 <Route path="/add-one-question/:id" element={<AddOneQuestion />} />
