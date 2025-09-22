@@ -63,44 +63,21 @@ const QuestionPaperPDFContent = ({ questionPaper, questionPaperId }) => {
   return (
     <div id="question-paper-content" style={{
       backgroundColor: 'white',
-      padding: '10mm 20mm 20mm 20mm',
+      padding: '8mm 15mm 15mm 15mm', // Reduced padding for more content
       fontFamily: 'Times New Roman, serif',
       color: '#000',
-      fontSize: '12px',
-      lineHeight: '1.3',
+      fontSize: '11px', // Smaller font for more content
+      lineHeight: '1.2', // Tighter line height
       maxWidth: '210mm',
-      minHeight: '297mm',
       margin: '0 auto',
       boxSizing: 'border-box',
-      border: '1px solid #ccc',
       position: 'relative'
     }}>
-      {/* Corner Information - Question Paper ID and Created Date */}
-      <div style={{
-        position: 'absolute',
-        bottom: '10mm',
-        left: '20mm',
-        fontSize: '10px',
-        color: '#000',
-        fontFamily: 'Times New Roman, serif'
-      }}>
-        Question Paper ID: {questionPaperId || questionPaper?.id || 'N/A'}
-      </div>
-      <div style={{
-        position: 'absolute',
-        bottom: '10mm',
-        right: '20mm',
-        fontSize: '10px',
-        color: '#000',
-        fontFamily: 'Times New Roman, serif'
-      }}>
-        Created: {questionPaper?.created_at ? new Date(questionPaper.created_at).toLocaleDateString() : new Date().toLocaleDateString()}
-      </div>
       
       {/* Header with Logo and Institute Info */}
       <div style={{ 
         textAlign: 'center',
-        marginBottom: '5px',
+        marginBottom: '3px', // Reduced margin
         fontFamily: 'Times New Roman, serif',
         marginTop: '0px'
       }}>
@@ -108,29 +85,28 @@ const QuestionPaperPDFContent = ({ questionPaper, questionPaperId }) => {
           display: 'flex', 
           // alignItems: 'center', 
           justifyContent: 'space-between',
-          marginBottom: '5px'
+          marginBottom: '3px' // Reduced margin
         }}>
         <div style={{ flex: 1, textAlign: 'center' }}>
-          <div style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '5px' }}>
+          <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '2px' }}> {/* Reduced font and margin */}
             SRM Institute of Science and Technology
           </div>
-          <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '3px' }}>
+          <div style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '2px' }}> {/* Reduced font and margin */}
             Faculty of Management Studies
           </div>
-          <div style={{ fontSize: '12px', marginBottom: '10px' }}>
+          <div style={{ fontSize: '10px', marginBottom: '5px' }}> {/* Reduced font and margin */}
             Delhi – Meerut Road, Sikri Kalan, Ghaziabad, Uttar Pradesh – 201204
           </div>
-          <div style={{ fontSize: '12px', fontWeight: 'bold' }}>
+          <div style={{ fontSize: '10px', fontWeight: 'bold' }}> {/* Reduced font */}
             Academic Year: {questionPaper.academic_year || '2024-25 (EVEN)'}
           </div>
         </div>
-            <div style={{ marginLeft: '20px' }}>
+            <div style={{ marginLeft: '15px' }}>
               <img 
                 src="/static/media/srm-logo-cmpny.66553ef44736779f7948.png" 
                 alt="SRM Logo" 
                 style={{ 
-                  width: '170px', 
-                  // height: '170px',
+                  width: '120px', // Reduced logo size
                   objectFit: 'contain'
                 }}
                 onError={(e) => {
@@ -139,15 +115,15 @@ const QuestionPaperPDFContent = ({ questionPaper, questionPaperId }) => {
               />
             </div>
           </div>
-          <hr style={{ border: 'none', borderTop: '1px solid #000', margin: '10px 0' }} />
+          <hr style={{ border: 'none', borderTop: '1px solid #000', margin: '5px 0' }} /> {/* Reduced margin */}
         </div>
 
         {/* Test Details */}
         <div style={{ 
           display: 'flex', 
           justifyContent: 'space-between',
-          marginBottom: '5px',
-          fontSize: '12px',
+          marginBottom: '3px', // Reduced margin
+          fontSize: '10px', // Reduced font size
           fontFamily: 'Times New Roman, serif',
           textAlign:'left'
         }}>
@@ -184,9 +160,9 @@ const QuestionPaperPDFContent = ({ questionPaper, questionPaperId }) => {
             .map((category, sortedIndex) => (
             category.questions && category.questions.length > 0 && (
               <div key={category.id || sortedIndex} style={{ 
-                // marginBottom: '40px', 
+                marginBottom: '8px', // Reduced margin
                 fontFamily: 'Times New Roman, serif', 
-                // marginTop: sortedIndex === 0 ? '30px' : '80px',
+                marginTop: sortedIndex === 0 ? '10px' : '15px', // Reduced margins
                 pageBreakInside: 'avoid',
                 breakInside: 'avoid'
               }}>
@@ -209,7 +185,7 @@ const QuestionPaperPDFContent = ({ questionPaper, questionPaperId }) => {
                 </div>
                 
                 {sortedIndex === 0 && (
-                  <div style={{ display: 'flex', marginBottom: '10px', fontSize: '12px', fontWeight: 'bold' }}>
+                  <div style={{ display: 'flex', marginBottom: '10px', fontSize: '12px', fontWeight: 'bold', marginTop: '10px' }}>
                     <div style={{ width: '50px', textAlign: 'center' }}>Q.No</div>
                     <div style={{ flex: 1, textAlign: 'left' }}> Question</div>
                     <div style={{ width: '60px', textAlign: 'center' }}>Marks</div>
@@ -227,7 +203,8 @@ const QuestionPaperPDFContent = ({ questionPaper, questionPaperId }) => {
                     alignItems: 'flex-start',
                     textAlign: 'left',
                     pageBreakInside: 'avoid',
-                    breakInside: 'avoid'
+                    breakInside: 'avoid',
+                    marginTop: '6px'
                   }}>
                     <div style={{ width: '50px', textAlign: 'center', paddingTop: '2px' }}>
                       {sortedIndex === 0 ? (questionIndex + 1) : `${questionIndex + 1}.`}
@@ -237,9 +214,9 @@ const QuestionPaperPDFContent = ({ questionPaper, questionPaperId }) => {
                         <div>
                           {/* Main Question Text/Title */}
                           <div style={{ 
-                            marginBottom: '10px', 
+                            // marginBottom: '10px', 
                             fontWeight: 'bold',
-                            fontSize: '12px'
+                            fontSize: '12px',
                           }}>
                             {question.text || question.question_type || `Question ${questionIndex + 1}`}
                           </div>
@@ -247,7 +224,7 @@ const QuestionPaperPDFContent = ({ questionPaper, questionPaperId }) => {
                           {/* Sub Questions */}
                           {question.sub_questions.map((sub, subIndex) => (
                             <div key={sub.id || subIndex} style={{ 
-                              marginBottom: '8px',
+                              // marginBottom: '8px',
                               marginLeft: '15px',
                               pageBreakInside: 'avoid',
                               breakInside: 'avoid'
@@ -293,6 +270,24 @@ const QuestionPaperPDFContent = ({ questionPaper, questionPaperId }) => {
             No question data available
           </div>
         )}
+        
+        {/* Footer for every page */}
+        <div style={{
+          position: 'absolute',
+          bottom: '0',
+          left: '0',
+          right: '0',
+          display: 'flex',
+          justifyContent: 'space-between',
+          padding: '5mm 14mm',
+          fontSize: '10px',
+          color: '#000',
+          fontFamily: 'Times New Roman, serif',
+          pageBreakInside: 'avoid'
+        }}>
+          <span>Question Paper ID: {questionPaperId || questionPaper?.id || 'N/A'}</span>
+          <span>Created: {questionPaper?.created_at ? new Date(questionPaper.created_at).toLocaleDateString() : new Date().toLocaleDateString()}</span>
+        </div>
     </div>
   )
 }

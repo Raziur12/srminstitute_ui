@@ -85,10 +85,10 @@ const PreviewQuestionPaper = () => {
 
       await html2pdf()
         .set({
-          margin: 10,
+          margin: [8, 8, 8, 8], // Reduced margins for more content
           filename: `${questionPaper.name || 'Question_Paper'}.pdf`,
           html2canvas: { 
-            scale: 2, 
+            scale: 1.5, // Reduced scale for more compact content
             useCORS: true,
             allowTaint: true,
             letterRendering: true
@@ -97,10 +97,12 @@ const PreviewQuestionPaper = () => {
             unit: 'pt', 
             format: 'a4', 
             orientation: 'portrait',
-            compress: true
+            compress: true,
+            putOnlyUsedFonts: true,
+            floatPrecision: 16
           },
           pagebreak: { 
-            mode: ['avoid-all', 'css', 'legacy'],
+            mode: ['css', 'legacy'],
             before: '.page-break-before',
             after: '.page-break-after',
             avoid: '.page-break-avoid'
@@ -147,6 +149,29 @@ const PreviewQuestionPaper = () => {
           }}
         >
           ← Back to Question Papers
+        </button>
+        
+        <button
+          onClick={handleDownloadPDF}
+          disabled={downloadingPDF}
+          style={{
+            backgroundColor: downloadingPDF ? '#95a5a6' : '#27ae60',
+            color: 'white',
+            border: 'none',
+            padding: '10px 20px',
+            borderRadius: '6px',
+            fontSize: '14px',
+            fontWeight: '600',
+            cursor: downloadingPDF ? 'not-allowed' : 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            transition: 'all 0.3s ease',
+            minWidth: '140px',
+            justifyContent: 'center'
+          }}
+        >
+          {downloadingPDF ? 'Downloading...' : '📄 Download PDF'}
         </button>
       </div>
       <div className="preview-wrapper">

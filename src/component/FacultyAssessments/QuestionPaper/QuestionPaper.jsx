@@ -142,7 +142,7 @@ const QuestionPaper = () => {
       const root = ReactDOM.createRoot(tempContainer);
       
       // Render the PDF content
-      root.render(React.createElement(QuestionPaperPDFContent, { questionPaper }));
+      root.render(React.createElement(QuestionPaperPDFContent, { questionPaper, questionPaperId: assessmentId }));
       
       // Wait for rendering to complete
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -154,18 +154,27 @@ const QuestionPaper = () => {
       }
 
       const opt = {
-        margin: 0,
+        margin: [8, 8, 8, 8], // Same as preview page
         filename: `${questionPaper.name || 'question-paper'}.pdf`,
-        image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { 
-          scale: 2,
+          scale: 1.5, // Same as preview page
           useCORS: true,
+          allowTaint: true,
           letterRendering: true
         },
         jsPDF: { 
-          unit: 'mm', 
+          unit: 'pt', // Same as preview page
           format: 'a4', 
-          orientation: 'portrait' 
+          orientation: 'portrait',
+          compress: true,
+          putOnlyUsedFonts: true,
+          floatPrecision: 16
+        },
+        pagebreak: { 
+          mode: ['css', 'legacy'],
+          before: '.page-break-before',
+          after: '.page-break-after',
+          avoid: '.page-break-avoid'
         }
       };
 
