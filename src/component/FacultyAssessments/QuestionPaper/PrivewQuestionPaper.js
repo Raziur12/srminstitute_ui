@@ -150,41 +150,7 @@ const PreviewQuestionPaper = () => {
         </button>
       </div>
       <div className="preview-wrapper">
-        <QuestionPaperPDFContent questionPaper={questionPaper} />
-        
-        {/* Footer */}
-        <div style={{
-          backgroundColor: 'white',
-          padding: '20px 30px',
-          borderTop: '1px solid #000',
-          textAlign: 'center',
-          marginTop: '20px'
-        }}>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '10px'
-          }}>
-            <p style={{
-              margin: 0,
-              color: '#000',
-              fontSize: '12px'
-            }}>
-              Question Paper ID: {id}
-            </p>
-            {questionPaper.created_at && (
-              <p style={{
-                margin: 0,
-                color: '#000',
-                fontSize: '12px'
-              }}>
-                Created: {new Date(questionPaper.created_at).toLocaleDateString()}
-              </p>
-            )}
-          </div>
-        </div>
+        <QuestionPaperPDFContent questionPaper={questionPaper} questionPaperId={id} />
         
         {/* Action Buttons */}
         <div style={{
@@ -270,7 +236,7 @@ const PreviewQuestionPaper = () => {
             padding: '20px'
           }}>
             <div id="question-paper-content">
-              <QuestionPaperPDFContent questionPaper={questionPaper} />
+              <QuestionPaperPDFContent questionPaper={questionPaper} questionPaperId={id} />
             </div>
           </div>
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const QuestionPaperPDFContent = ({ questionPaper }) => {
+const QuestionPaperPDFContent = ({ questionPaper, questionPaperId }) => {
   if (!questionPaper) return null
 
   // Helper function to render questions for each part
@@ -72,8 +72,31 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
       minHeight: '297mm',
       margin: '0 auto',
       boxSizing: 'border-box',
-      border: '1px solid #ccc'
+      border: '1px solid #ccc',
+      position: 'relative'
     }}>
+      {/* Corner Information - Question Paper ID and Created Date */}
+      <div style={{
+        position: 'absolute',
+        bottom: '10mm',
+        left: '20mm',
+        fontSize: '10px',
+        color: '#000',
+        fontFamily: 'Times New Roman, serif'
+      }}>
+        Question Paper ID: {questionPaperId || questionPaper?.id || 'N/A'}
+      </div>
+      <div style={{
+        position: 'absolute',
+        bottom: '10mm',
+        right: '20mm',
+        fontSize: '10px',
+        color: '#000',
+        fontFamily: 'Times New Roman, serif'
+      }}>
+        Created: {questionPaper?.created_at ? new Date(questionPaper.created_at).toLocaleDateString() : new Date().toLocaleDateString()}
+      </div>
+      
       {/* Header with Logo and Institute Info */}
       <div style={{ 
         textAlign: 'center',
@@ -83,7 +106,7 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
       }}>
         <div style={{ 
           display: 'flex', 
-          alignItems: 'center', 
+          // alignItems: 'center', 
           justifyContent: 'space-between',
           marginBottom: '5px'
         }}>
@@ -107,7 +130,7 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
                 alt="SRM Logo" 
                 style={{ 
                   width: '170px', 
-                  height: '170px',
+                  // height: '170px',
                   objectFit: 'contain'
                 }}
                 onError={(e) => {
@@ -161,9 +184,9 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
             .map((category, sortedIndex) => (
             category.questions && category.questions.length > 0 && (
               <div key={category.id || sortedIndex} style={{ 
-                marginBottom: '40px', 
+                // marginBottom: '40px', 
                 fontFamily: 'Times New Roman, serif', 
-                marginTop: sortedIndex === 0 ? '30px' : '80px',
+                // marginTop: sortedIndex === 0 ? '30px' : '80px',
                 pageBreakInside: 'avoid',
                 breakInside: 'avoid'
               }}>
@@ -188,7 +211,7 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
                 {sortedIndex === 0 && (
                   <div style={{ display: 'flex', marginBottom: '10px', fontSize: '12px', fontWeight: 'bold' }}>
                     <div style={{ width: '50px', textAlign: 'center' }}>Q.No</div>
-                    <div style={{ flex: 1, textAlign: 'left', paddingLeft: '20px' }}> Question</div>
+                    <div style={{ flex: 1, textAlign: 'left' }}> Question</div>
                     <div style={{ width: '60px', textAlign: 'center' }}>Marks</div>
                     <div style={{ width: '40px', textAlign: 'center' }}>BL</div>
                     <div style={{ width: '40px', textAlign: 'center' }}>CO</div>
@@ -199,7 +222,7 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
                 {category.questions.map((question, questionIndex) => (
                   <div key={question.id || questionIndex} style={{ 
                     display: 'flex', 
-                    marginBottom: '15px', 
+                    // marginBottom: '15px', 
                     fontSize: '12px',
                     alignItems: 'flex-start',
                     textAlign: 'left',
@@ -209,33 +232,34 @@ const QuestionPaperPDFContent = ({ questionPaper }) => {
                     <div style={{ width: '50px', textAlign: 'center', paddingTop: '2px' }}>
                       {sortedIndex === 0 ? (questionIndex + 1) : `${questionIndex + 1}.`}
                     </div>
-                    <div style={{ flex: 1, paddingLeft: '20px', lineHeight: '1.4' }}>
+                    <div style={{ flex: 1 }}>
                       {question.sub_questions && question.sub_questions.length > 0 ? (
                         <div>
+                          {/* Main Question Text/Title */}
+                          <div style={{ 
+                            marginBottom: '10px', 
+                            fontWeight: 'bold',
+                            fontSize: '12px'
+                          }}>
+                            {question.text || question.question_type || `Question ${questionIndex + 1}`}
+                          </div>
+                          
+                          {/* Sub Questions */}
                           {question.sub_questions.map((sub, subIndex) => (
                             <div key={sub.id || subIndex} style={{ 
                               marginBottom: '8px',
+                              marginLeft: '15px',
                               pageBreakInside: 'avoid',
                               breakInside: 'avoid'
                             }}>
-                              <div>
-                                {sortedIndex > 0 && sub.option_label ? `(${sub.option_label}) ` : ''}
+                              <div style={{
+                                textIndent: '-20px',
+                                paddingLeft: '20px',
+                                lineHeight: '1.4'
+                              }}>
+                                {sub.option_label ? `(${sub.option_label}) ` : ''}
                                 {sub.text}
                               </div>
-                              {sub.options && sub.options.length > 0 && (
-                                <div style={{ marginLeft: '15px', marginTop: '5px' }}>
-                                  {sub.options.map((opt, optIdx) => (
-                                    <div key={optIdx} style={{ marginBottom: '2px' }}>
-                                      {String.fromCharCode(65 + optIdx)}.&nbsp;{opt.option_text || opt.text || opt}
-                                    </div>
-                                  ))}
-                                </div>
-                              )}
-                              {/* {categoryIndex > 0 && subIndex < question.sub_questions.length - 1 && (
-                                <div style={{ marginTop: '10px', fontSize: '10px', textAlign: 'center' }}>
-                                  (OR)
-                                </div>
-                              )} */}
                             </div>
                           ))}
                         </div>
