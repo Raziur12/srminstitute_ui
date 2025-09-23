@@ -253,7 +253,7 @@ const MCQOptions = () => {
             <th>Option Label</th>
             <th>Option Text</th>
             <th>Correct Answer</th>
-            <th>Sub Question ID</th>
+            {/* <th>Sub Question ID</th> */}
             <th>Actions</th>
           </tr>
         </thead>
@@ -319,7 +319,7 @@ const MCQOptions = () => {
                       {isCorrect ? '✓ Correct' : '✗ Incorrect'}
                     </span>
                   </td>
-                  <td>{option.subquestion}</td>
+                  {/* <td>{option.subquestion}</td> */}
                 <td>
                   <div style={{ display: 'flex', gap: '8px' }}>
                     <button
